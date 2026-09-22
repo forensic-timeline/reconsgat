@@ -1,0 +1,17 @@
+# # User Login Activity in Server
+# - id: login_user
+#   ground_truth_label: login_user
+#   sensitivity: moderate
+#   filter:
+#     - Accepted publickey
+#     - gburke
+#     - 192.168.0.91
+
+# # User Login Activity in Server
+# - id: login_user
+#   ground_truth_label: login_user
+#   sensitivity: moderate
+#   filter:
+#     - systemd-logind
+#     - new session
+#     - gburke
