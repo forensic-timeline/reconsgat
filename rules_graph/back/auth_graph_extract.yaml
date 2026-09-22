@@ -1,0 +1,241 @@
+# ============================================================
+# auth_graph_extract.yaml
+# Extraction template untuk auth.log
+# Parser: text/syslog_traditional, filename: auth.log
+# ============================================================
+
+log_type: auth.log
+node_type: AuthEvent
+
+# ── Deteksi file ─────────────────────────────────────────────
+detect:
+  filename_contains:
+    - auth.log
+    - auth_log
+  parser_equals:
+    - text/syslog_traditional
+
+# ── Pattern list (diuji berurutan, pertama yang match dipakai) ─
+patterns:
+
+  session:
+    description: "systemd-logind new session (session ID bisa angka atau alphanumeric seperti c1)"
+    regex: 'New session \w+ of user (\S+?)\.?$'
+    fields:
+      username:    {group: 1}
+      target_user: {group: 1}
+    defaults:
+      auth_type:   "session"
+      command:     "new_session"
+      source_ip:   ""
+      tty:         ""
+      pwd:         ""
+
+  ssh_login:
+    description: "SSH Failed/Accepted/Invalid password for USER from IP"
+    regex: '(Failed|Accepted|Invalid)\s+\w+\s+for\s+(\S+)\s+from\s+([\d\.]+)'
+    fields:
+      command:     {group: 1, transform: lower}
+      username:    {group: 2}
+      target_user: {group: 2}
+      source_ip:   {group: 3}
+    defaults:
+      auth_type:   "ssh"
+      tty:         ""
+      pwd:         ""
+
+  ssh_disconn_user:
+    description: "SSH Disconnected from user USER IP"
+    regex: 'Disconnected from user\s+(\S+)\s+([\d\.]+)'
+    fields:
+      username:    {group: 1}
+      target_user: {group: 1}
+      source_ip:   {group: 2}
+    defaults:
+      auth_type:   "ssh"
+      command:     "disconnected"
+      tty:         ""
+      pwd:         ""
+
+  ssh_closed:
+    description: "SSH Connection closed by IP"
+    regex: 'Connection closed by\s+([\d\.]+)'
+    fields:
+      source_ip:   {group: 1}
+    defaults:
+      auth_type:   "ssh"
+      username:    ""
+      target_user: ""
+      command:     "connection_closed"
+      tty:         ""
+      pwd:         ""
+
+  ssh_disconnect:
+    description: "SSH Received disconnect from IP"
+    regex: '(?:Received disconnect|Disconnected) from\s+([\d\.]+)'
+    fields:
+      source_ip:   {group: 1}
+    defaults:
+      auth_type:   "ssh"
+      username:    ""
+      target_user: ""
+      command:     "disconnect"
+      tty:         ""
+      pwd:         ""
+
+  pam_auth_failure:
+    description: "PAM auth failure — format pam_unix(svc:action) maupun PAM N more"
+    regex: '(?:pam_unix\((\w+):(\w+)\):\s+([^;]+)|PAM \d+ more authentication failure);'
+    fields:
+      command:     {group: 3}   # hanya ada di format pam_unix, kosong di format "PAM N more"
+    sub_patterns:
+      source_ip:   {regex: 'rhost=([\d\.]+)',  group: 1}
+      target_user: {regex: '\buser=(\S+)',      group: 1}
+      tty:         {regex: '\btty=(\S+)',        group: 1}
+    defaults:
+      auth_type_prefix: "pam_"
+      auth_type_group:  2
+      command:     "authentication_failure"   # fallback jika group 3 kosong
+      username:    ""
+      pwd:         ""
+
+  pam:
+    description: "PAM pam_unix(service:action): message for USER"
+    regex: 'pam_unix\((\w+):(\w+)\):\s+(.+?)\s+for\s+(\S+)'
+    fields:
+      target_user: {group: 4}
+      command:     {group: 3}
+    defaults:
+      auth_type_prefix: "pam_"
+      auth_type_group:  2      # ambil group 2 dari regex sebagai suffix auth_type
+      username:    ""
+      source_ip:   ""
+      tty:         ""
+      pwd:         ""
+
+  sudo:
+    description: "sudo TTY= PWD= USER= COMMAND="
+    regex: '\[(\w+)\]\s*(\w+)'
+    fields:
+      auth_type:   {group: 1}
+      username:    {group: 2}
+    sub_patterns:
+      tty:         {regex: 'TTY=(\S+)',    group: 1, rstrip: ";"}
+      pwd:         {regex: 'PWD=(\S+)',    group: 1, rstrip: ";"}
+      target_user: {regex: 'USER=(\w+)',   group: 1, rstrip: ";"}
+      command:     {regex: 'COMMAND=(.+)$', group: 1}
+    defaults:
+      source_ip:   ""
+
+# ── Field tambahan (dari dataclass, bukan regex) ──────────────
+extra_fields:
+  - event_id
+  - label
+  - severity
+  - actor       # = username atau source_ip
+  - message     # = raw line
+  - source_file
+  - source_ip
+  - timestamp
+
+# ── Cypher query templates ────────────────────────────────────
+cypher:
+  with_user:
+    description: "AuthEvent dengan username — buat User node dan relasi PERFORMED"
+    query: |
+      MERGE (u:User {username: $username})
+      ON CREATE SET u.first_seen = $timestamp, u.last_seen = $timestamp
+      ON MATCH SET u.last_seen = $timestamp
+
+      FOREACH (_ IN CASE WHEN $source_ip <> '' THEN [1] ELSE [] END |
+          MERGE (ip:IPAddress {ip: $source_ip})
+      )
+
+      MERGE (auth:AuthEvent {event_id: $event_id})
+      ON CREATE SET
+          auth.event_id = $event_id,
+          auth.timestamp  = $timestamp,
+          auth.label = $label,
+          auth.severity = $severity,
+          auth.actor = $actor,
+          auth.message = $message,
+          auth.source_file = $source_file,
+          auth.source_ip = $source_ip,
+          auth.auth_type = $auth_type,
+          auth.tty = $tty,
+          auth.pwd = $pwd,
+          auth.target_user = $target_user
+
+      MERGE (u)-[:PERFORMED]->(auth)
+
+      WITH u, auth
+      OPTIONAL MATCH (ip:IPAddress {ip: $source_ip})
+      FOREACH (_ IN CASE WHEN ip IS NOT NULL THEN [1] ELSE [] END |
+          MERGE (ip)-[:REQUEST]->(auth)
+      )
+
+      WITH u, auth
+      WHERE auth.target_user = 'root'
+      MERGE (root:User {username: 'root'})
+      ON CREATE SET root.first_seen = $timestamp
+      CREATE (auth)-[:ESCALATED_TO]->(root)
+
+      RETURN u.username as user
+    params:
+      - event_id
+      - label
+      - severity
+      - actor
+      - message
+      - source_file
+      - source_ip
+      - username
+      - auth_type
+      - tty
+      - pwd
+      - target_user
+      - command
+      - timestamp
+
+  orphan:
+    description: "AuthEvent tanpa username — buat node standalone + IP jika ada"
+    query: |
+      CREATE (auth:AuthEvent {
+          event_id: $event_id,
+          label: $label,
+          severity: $severity,
+          message: $message,
+          source_file: $source_file,
+          source_ip: $source_ip,
+          auth_type: $auth_type,
+          tty: $tty,
+          pwd: $pwd,
+          target_user: $target_user,
+          command: $command,
+          timestamp: $timestamp
+      })
+
+      FOREACH (_ IN CASE WHEN $source_ip <> '' THEN [1] ELSE [] END |
+          MERGE (ip:IPAddress {ip: $source_ip})
+      )
+      WITH auth
+      OPTIONAL MATCH (ip:IPAddress {ip: $source_ip})
+      FOREACH (_ IN CASE WHEN ip IS NOT NULL THEN [1] ELSE [] END |
+          MERGE (ip)-[:REQUEST]->(auth)
+      )
+
+      RETURN auth.timestamp as created
+    params:
+      - event_id
+      - label
+      - severity
+      - actor
+      - message
+      - source_file
+      - source_ip
+      - auth_type
+      - tty
+      - pwd
+      - target_user
+      - command
+      - timestamp

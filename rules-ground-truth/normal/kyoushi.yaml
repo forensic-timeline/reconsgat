@@ -1,0 +1,171 @@
+# Labelling Rules untuk Ground Truth Dataset
+# Format:
+#   - filter: list of patterns (AND condition - semua pattern harus match)
+#   - Pattern matching bersifat case-insensitive
+
+# adapted from Kyoushi Labelling Rules
+
+# Dirb Scan
+- id: dirb_scan
+  ground_truth_label: dirb_scan
+  sensitivity: moderate
+  filter:
+    - "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
+    - "172.16.100.151"
+
+# Web Scan
+- id: wpscan
+  ground_truth_label: wpscan
+  sensitivity: moderate
+  filter:
+    - wpscan
+    - "172.16.100.151"
+
+# Upload Shell
+- id: upload_rce_shell_1
+  ground_truth_label: upload_rce_shell
+  sensitivity: moderate
+  filter:
+    - "GET / "
+    - python
+    - "172.16.100.151"
+
+# Upload Shell
+- id: upload_rce_shell_2
+  ground_truth_label: upload_rce_shell
+  sensitivity: moderate
+  filter:
+    - "?p=5"
+    - GET
+    - python
+    - "172.16.100.151"
+
+# Upload Shell
+- id: upload_rce_shell_3
+  ground_truth_label: upload_rce_shell
+  sensitivity: moderate
+  filter:
+    - wp-admin/admin-ajax
+    - POST
+    - python
+    - "172.16.100.151"
+
+# check_ps_a via Webshell
+# ip addr
+- id: check_network_config
+  ground_truth_label: check_network_config
+  sensitivity: moderate
+  filter:
+    - "wp_meta=WyJpcCIsICJhZGRyIl0%3D"
+    - "172.16.100.151"
+
+# check_user_id via Webshell
+# id
+- id: check_user_id
+  ground_truth_label: check_user_id
+  sensitivity: moderate
+  filter:
+    - "wp_meta=WyJpZCJd"
+    - "172.16.100.151"
+
+# read_passwd via Webshell
+# cat /etc/passwd
+- id: read_passwd
+  ground_truth_label: read_passwd
+  sensitivity: moderate
+  filter:
+    - "wp_meta=WyJjYXQiLCAiL2V0Yy9wYXNzd2QiXQ%3D%3D"
+    - "172.16.100.151"
+
+# list_web_dir via Webshell
+# ls -laR /var/www
+- id: list_web_dir
+  ground_truth_label: list_web_dir
+  sensitivity: moderate
+  filter:
+    - "wp_meta=WyJscyIsICItbGFSIiwgIi92YXIvd3d3Il0%3D"
+    - "172.16.100.151"
+
+# check_wp_config via Webshell
+- id: check_wp_config
+  ground_truth_label: check_wp_config
+  sensitivity: moderate
+  filter:
+    - "wp_meta=WyJjYXQiLCAiL3Zhci93d3cvaW50cmFuZXQuY29tcGFueS5jeWJlcnJhbmdlLmF0L3dwLWNvbmZpZy5waHAiXQ%3D%3D"
+    - "172.16.100.151"
+
+# dump_wp_users via Webshell
+- id: dump_wp_users
+  ground_truth_label: dump_wp_users
+  sensitivity: moderate
+  filter:
+    - "wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIidzZWxlY3QgKiBmcm9tIHdwX3VzZXJzJyJd"
+    - "172.16.100.151"
+
+# check_pwd via Webshell
+# pwd
+- id: check_pwd
+  ground_truth_label: check_pwd
+  sensitivity: moderate
+  filter:
+    - "wp_meta=WyJwd2QiXQ%3D%3D"
+    - "172.16.100.151"
+
+# brute force ssh login
+- id: ssh_login_success
+  ground_truth_label: ssh_login_success
+  sensitivity: moderate
+  filter:
+    - "Accepted publickey"
+    - "172.16.100.151"
+
+# User Login Activity in Server
+- id: login_user
+  ground_truth_label: login_user
+  sensitivity: moderate
+  filter:
+    - systemd-logind
+    - new session
+    - msperl
+
+# Sudo Check from Web Directory
+- id: check_sudo
+  ground_truth_label: check_sudo
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - COMMAND=list
+    - msperl
+
+# Sudo Read Shadow from Web Directory
+- id: read_shadow
+  ground_truth_label: read_shadow
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - COMMAND=/bin/cat
+    - /shadow
+    - msperl
+
+# Sudo List Root from Web Directory
+- id: list_root
+  ground_truth_label: list_root
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - COMMAND=/bin/ls
+    - /root
+    - msperl
+
+###
+# User Login Activity in Server
+- id: login_user
+  ground_truth_label: login_user
+  sensitivity: moderate
+  filter:
+    - systemd-logind
+    - new session
+    - ffeichtner

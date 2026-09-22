@@ -1,0 +1,29 @@
+# Labelling Rules untuk Ground Truth Dataset
+# Format:
+#   - filter: list of patterns (AND condition - semua pattern harus match)
+#   - Pattern matching bersifat case-insensitive
+
+# adapted from AIT V2 Fox Labelling Rules
+
+# Web Scan
+- id: wpscan
+  ground_truth_label: wpscan
+  sensitivity: moderate
+  filter:
+    - wpscan
+
+# Dirb Scan
+- id: dirb_scan
+  ground_truth_label: dirb_scan
+  sensitivity: moderate
+  filter:
+    - "code: 404"
+    - "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
+
+# Upload Shell
+- id: suspicious_user_agent
+  ground_truth_label: suspicious_user_agent
+  sensitivity: moderate
+  filter:
+    - "GET / "
+    - python

