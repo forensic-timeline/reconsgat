@@ -1,8 +1,0 @@
-# # User Login Activity in Server
-# - id: login_user
-#   ground_truth_label: login_user
-#   sensitivity: moderate
-#   filter:
-#     - Accepted publickey
-#     - phopkins
-#     - 10.35.35.202
