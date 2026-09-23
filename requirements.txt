@@ -1,7 +1,0 @@
-matplotlib==3.10.9
-matplotlib-inline==0.2.1
-neo4j==6.1.0
-networkx==3.6.1
-numpy==2.4.4
-pandas==3.0.5
-PyYAML==6.0.3
