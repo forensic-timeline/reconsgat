@@ -6,6 +6,7 @@ from process.low_level_predict import LowLevelPredict
 from process.log_to_graph import LogToGraph
 from process.attacker_identification import AttackerIdentification
 from process.attacker_tracking import AttackerTracking
+from process.graph_semantic import GraphSemantic
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -46,12 +47,18 @@ if __name__ == "__main__":
 
     print("")
     print("="*80)
-    print("=== Step 5: Attacker Identification ===")
+    print("=== Step 5.1: Attacker Identification ===")
     print("="*80)
     AttackerIdentification(dataset).run()
 
     print("")
     print("="*80)
-    print("=== Step 6: Attacker Tracking ===")
+    print("=== Step 5.2: Attacker Tracking ===")
     print("="*80)
     AttackerTracking(dataset).run()
+
+    print("")
+    print("="*80)
+    print("=== Step 6.1: Graph Semantic ===")
+    print("="*80)
+    GraphSemantic(dataset).run()
