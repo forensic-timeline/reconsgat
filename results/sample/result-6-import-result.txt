@@ -1,0 +1,13 @@
+============================================================
+FINAL SUMMARY
+============================================================
+Total lines processed : 51
+Total inserted        : 51
+  - syslog + auth log : 19
+  - access + error log: 32
+Total errors          : 0
+  - syslog + auth log : 0
+  - access + error log: 0
+Username cache size   : 4
+
+Done!

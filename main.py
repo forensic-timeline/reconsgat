@@ -3,7 +3,7 @@ import sys
 from process.normalization import Normalization
 from process.log_decoder import LogDecoder
 from process.low_level_predict import LowLevelPredict
-
+from process.log_to_graph import LogToGraph
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -29,3 +29,7 @@ if __name__ == "__main__":
     print("")
     print("=== Step 3: Low Level Semantic Labeling ===")
     LowLevelPredict(dataset).run()
+
+    print("")
+    print("=== Step 4: Log to Graph ===")
+    LogToGraph(dataset).run()
