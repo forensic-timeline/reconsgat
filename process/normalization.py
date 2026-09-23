@@ -1,9 +1,9 @@
 """
 process/normalization.py
 
-Konversi dari 1_normalization.ipynb. Semua logika dipertahankan
-PERSIS SAMA seperti versi notebook -- cuma dibungkus jadi class
-supaya bisa dipanggil dari main.py.
+Message normalization and
+actor extraction from raw messages based on rules
+in actor_enrichment.yaml
 """
 
 import csv
@@ -29,20 +29,13 @@ class Normalization:
 
     def normalize_url_encoding(self, url):
         """
-        Normalisasi URL encoding pada URL.
-
-        1. Convert ~xx to %xx (contoh: ~20 menjadi %20)
+        Normalization of URL encoding in URLs.
+        1. Convert ~xx to %xx (eg: ~20 to %20)
         2. Replace + with %20 (treat + as space)
         3. Replace literal spaces with %20
-
-        Parameters:
-        - url: String URL yang akan dinormalisasi
-
-        Returns:
-        - String URL yang sudah dinormalisasi
         """
 
-        # 1. Convert ~xx to %xx (contoh: ~20, ~3D, ~2F)
+        # 1. Convert ~xx to %xx (eg: ~20, ~3D, ~2F)
         url = re.sub(r'~([0-9A-Fa-f]{2})', r'%\1', url)
 
         # 2. Replace + with %20
@@ -55,25 +48,19 @@ class Normalization:
 
     def normalize_message(self, message):
         """
-        Normalisasi message.
-        - Jika http_request: normalisasi hanya bagian URL
-        - Jika bukan http_request: kembalikan message apa adanya
-
-        Parameters:
-        - message: String message lengkap
-
-        Returns:
-        - String message yang sudah dinormalisasi
+        Normalize the message.
+        - If http_request: normalize only the URL part
+        - If not http_request: return the message as is
         """
 
-        # Jika bukan http_request, kembalikan apa adanya
+        # If not http_request, return as is
         if not message.startswith('http_request:'):
             return message
 
-        # Pattern untuk menangkap: http_request: METHOD URL HTTP/x.x
-        # Group 1: bagian awal (http_request: METHOD )
+        # Pattern to capture: http_request: METHOD URL HTTP/x.x
+        # Group 1: http_request: METHOD
         # Group 2: URL path
-        # Group 3: bagian akhir (HTTP/x.x ...)
+        # Group 3: HTTP/x.x ...
         pattern = r'^(http_request:\s*(?:GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)\s+)(\S+)(\s+HTTP/.*)$'
 
         match = re.match(pattern, message)
@@ -83,12 +70,12 @@ class Normalization:
             url = match.group(2)      # /wp-content/...
             suffix = match.group(3)   # HTTP/1.1 from: ...
 
-            # Normalisasi hanya bagian URL
+            # Normalization only the URL part
             normalized_url = self.normalize_url_encoding(url)
 
             return prefix + normalized_url + suffix
 
-        # Jika tidak match pattern, kembalikan message asli
+        # If not match pattern, return the original message
         return message
 
     def _load_actor_rules(self):
@@ -110,15 +97,8 @@ class Normalization:
 
     def extract_actor(self, message):
         """
-        Ekstrak actor dari message mentah (belum dinormalisasi),
-        berdasarkan rules di actor_enrichment.yaml.
-        Rule dicek berurutan, rule pertama yang match dipakai.
-
-        Parameters:
-        - message: String message asli (raw)
-
-        Returns:
-        - String actor, atau fallback default ("-") jika tidak ada rule yang cocok
+        Extract actor from the raw message,
+        based on the rules in actor_enrichment.yaml.
         """
         desc = str(message)
 
@@ -146,7 +126,7 @@ class Normalization:
             reader = csv.DictReader(f)
             writer = csv.writer(out)
 
-            # Tambahkan kolom baru di awal
+            # Add new column at the beginning
             fieldnames = ["event_id"] + reader.fieldnames + ["normalized", "actor"]
             writer = csv.DictWriter(out, fieldnames=fieldnames)
             writer.writeheader()
@@ -154,11 +134,11 @@ class Normalization:
             for row in reader:
                 processed += 1
 
-                # Ambil dan normalisasi kolom message
+                # Take and normalize the message column
                 original_message = row["message"]
                 normalized_message = self.normalize_message(original_message)
 
-                # Ekstrak actor dari message asli (raw), bukan dari yang sudah dinormalisasi
+                # Extract actor from the original message (raw), not the normalized one
                 actor = self.extract_actor(original_message)
 
                 # Replace message
@@ -168,7 +148,7 @@ class Normalization:
 
                 writer.writerow(row)
 
-                # Progress tiap 50.000 baris
+                # Progress every 50.000 lines
                 if processed % 50000 == 0:
                     print(f"Processed {processed}/{total_lines} lines ({processed/total_lines:.2%})")
 
