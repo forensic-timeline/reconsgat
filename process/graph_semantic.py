@@ -183,6 +183,7 @@ MERGE (hle1)-[:FOLLOWED_BY]->(hle2)
         # ── Query fetch events ───
 
         # Path 1: HTTPRequest and AuthEvent directly via REQUEST from IP
+        print("Fetching events from Neo4j...")
         FETCH_QUERY_DIRECT = """
 MATCH (ip:IPAddress {ip: $target_ip})-[:REQUEST]->(e)
 WHERE (e:HTTPRequest OR e:AuthEvent)

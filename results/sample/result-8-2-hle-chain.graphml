@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d8" for="edge" attr.name="relationship" attr.type="string" />
+  <key id="d7" for="node" attr.name="timestamp" attr.type="string" />
+  <key id="d6" for="node" attr.name="label" attr.type="string" />
+  <key id="d5" for="node" attr.name="event_ids" attr.type="string" />
+  <key id="d4" for="node" attr.name="group_count" attr.type="long" />
+  <key id="d3" for="node" attr.name="actors" attr.type="string" />
+  <key id="d2" for="node" attr.name="hle_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="severity" attr.type="string" />
+  <key id="d0" for="node" attr.name="node_type" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="HLE-1">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-1</data>
+      <data key="d3">192.168.115.21,172.17.130.196</data>
+      <data key="d4">4</data>
+      <data key="d5">6,7,8,9</data>
+      <data key="d6">Exploit Framework User Agent</data>
+      <data key="d7">2022-01-18T12:37:49.000000+00:00</data>
+    </node>
+    <node id="HLE-2">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">medium</data>
+      <data key="d2">HLE-2</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">3</data>
+      <data key="d5">10,11,12</data>
+      <data key="d6">HTTP Request with Suspicious User Agent</data>
+      <data key="d7">2022-01-18T12:38:00.000000+00:00</data>
+    </node>
+    <node id="HLE-3">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-3</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">13</data>
+      <data key="d6">Sysinfo Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:04.000000+00:00</data>
+    </node>
+    <node id="HLE-4">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-4</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">14</data>
+      <data key="d6">Network Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:06.000000+00:00</data>
+    </node>
+    <node id="HLE-5">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-5</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">15</data>
+      <data key="d6">File Read Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:08.000000+00:00</data>
+    </node>
+    <node id="HLE-6">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-6</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">16</data>
+      <data key="d6">Network Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:09.000000+00:00</data>
+    </node>
+    <node id="HLE-7">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-7</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">17</data>
+      <data key="d6">Process Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:11.000000+00:00</data>
+    </node>
+    <node id="HLE-8">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-8</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">18</data>
+      <data key="d6">Filesystem Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:14.000000+00:00</data>
+    </node>
+    <node id="HLE-9">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-9</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">2</data>
+      <data key="d5">19,20</data>
+      <data key="d6">Local File Inclusion</data>
+      <data key="d7">2022-01-18T12:38:16.000000+00:00</data>
+    </node>
+    <node id="HLE-10">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-10</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">21</data>
+      <data key="d6">Time-Temporal Information Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:19.000000+00:00</data>
+    </node>
+    <node id="HLE-11">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-11</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">22</data>
+      <data key="d6">Filesystem Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:21.000000+00:00</data>
+    </node>
+    <node id="HLE-12">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-12</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">23</data>
+      <data key="d6">File Read Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:23.000000+00:00</data>
+    </node>
+    <node id="HLE-13">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">critical</data>
+      <data key="d2">HLE-13</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">24</data>
+      <data key="d6">Database Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:25.000000+00:00</data>
+    </node>
+    <node id="HLE-14">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-14</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">25</data>
+      <data key="d6">File Read Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:27.000000+00:00</data>
+    </node>
+    <node id="HLE-15">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-15</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">26</data>
+      <data key="d6">File Resource Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:38:29.000000+00:00</data>
+    </node>
+    <node id="HLE-16">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">medium</data>
+      <data key="d2">HLE-16</data>
+      <data key="d3">10.35.35.118</data>
+      <data key="d4">1</data>
+      <data key="d5">27</data>
+      <data key="d6">HTTP Request with Suspicious User Agent</data>
+      <data key="d7">2022-01-18T12:38:32.000000+00:00</data>
+    </node>
+    <node id="HLE-17">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-17</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">2</data>
+      <data key="d5">28,29</data>
+      <data key="d6">File Resource Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:39:03.000000+00:00</data>
+    </node>
+    <node id="HLE-18">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">critical</data>
+      <data key="d2">HLE-18</data>
+      <data key="d3">172.17.130.196</data>
+      <data key="d4">1</data>
+      <data key="d5">30</data>
+      <data key="d6">Shell Script Execution Commands in HTTP Request</data>
+      <data key="d7">2022-01-18T12:39:11.000000+00:00</data>
+    </node>
+    <node id="HLE-19">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-19</data>
+      <data key="d3">phopkins</data>
+      <data key="d4">1</data>
+      <data key="d5">32</data>
+      <data key="d6">Sudo Command Executed in Web Directory</data>
+      <data key="d7">2022-01-18T13:14:41.000000+00:00</data>
+    </node>
+    <node id="HLE-20">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">critical</data>
+      <data key="d2">HLE-20</data>
+      <data key="d3">phopkins</data>
+      <data key="d4">1</data>
+      <data key="d5">33</data>
+      <data key="d6">Sudo List Command Executed from Web Directory</data>
+      <data key="d7">2022-01-18T13:14:43.000000+00:00</data>
+    </node>
+    <node id="HLE-21">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">critical</data>
+      <data key="d2">HLE-21</data>
+      <data key="d3">phopkins</data>
+      <data key="d4">1</data>
+      <data key="d5">34</data>
+      <data key="d6">Sudo Read Command Executed from Web Directory</data>
+      <data key="d7">2022-01-18T13:14:49.000000+00:00</data>
+    </node>
+    <node id="HLE-22">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">medium</data>
+      <data key="d2">HLE-22</data>
+      <data key="d3">243.23.54.175,root</data>
+      <data key="d4">3</data>
+      <data key="d5">37,38,38</data>
+      <data key="d6">User Login Activity in Server</data>
+      <data key="d7">2025-04-29T05:35:51.000000+00:00</data>
+    </node>
+    <node id="HLE-23">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">high</data>
+      <data key="d2">HLE-23</data>
+      <data key="d3">243.23.54.175</data>
+      <data key="d4">1</data>
+      <data key="d5">42</data>
+      <data key="d6">Login Cyberpanel Attempts</data>
+      <data key="d7">2025-04-29T05:47:14.000000+00:00</data>
+    </node>
+    <node id="HLE-24">
+      <data key="d0">HighLevelEvent</data>
+      <data key="d1">medium</data>
+      <data key="d2">HLE-24</data>
+      <data key="d3">71.238.128.110</data>
+      <data key="d4">1</data>
+      <data key="d5">43</data>
+      <data key="d6">SSH Failed Login Attempt</data>
+      <data key="d7">2025-04-29T06:05:31.000000+00:00</data>
+    </node>
+    <edge source="HLE-1" target="HLE-2">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-2" target="HLE-3">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-3" target="HLE-4">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-4" target="HLE-5">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-5" target="HLE-6">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-6" target="HLE-7">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-7" target="HLE-8">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-8" target="HLE-9">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-9" target="HLE-10">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-10" target="HLE-11">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-11" target="HLE-12">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-12" target="HLE-13">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-13" target="HLE-14">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-14" target="HLE-15">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-15" target="HLE-16">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-16" target="HLE-17">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-17" target="HLE-18">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-18" target="HLE-19">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-19" target="HLE-20">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-20" target="HLE-21">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-21" target="HLE-22">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-22" target="HLE-23">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+    <edge source="HLE-23" target="HLE-24">
+      <data key="d8">FOLLOWED_BY</data>
+    </edge>
+  </graph>
+</graphml>

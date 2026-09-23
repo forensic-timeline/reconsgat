@@ -7,6 +7,7 @@ from process.log_to_graph import LogToGraph
 from process.attacker_identification import AttackerIdentification
 from process.attacker_tracking import AttackerTracking
 from process.graph_semantic import GraphSemantic
+from process.graph_high_level import GraphHighLevel
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -62,3 +63,9 @@ if __name__ == "__main__":
     print("=== Step 6.1: Graph Semantic ===")
     print("="*80)
     GraphSemantic(dataset).run()
+
+    print("")
+    print("="*80)
+    print("=== Step 6.2: Graph High Level ===")
+    print("="*80)
+    GraphHighLevel(dataset).run()
