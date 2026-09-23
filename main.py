@@ -2,6 +2,7 @@ import sys
 
 from process.normalization import Normalization
 from process.log_decoder import LogDecoder
+from process.low_level_predict import LowLevelPredict
 
 
 if __name__ == "__main__":
@@ -24,3 +25,7 @@ if __name__ == "__main__":
     print("")
     print("=== Step 2: Log Decoder ===")
     LogDecoder(dataset).run()
+
+    print("")
+    print("=== Step 3: Low Level Semantic Labeling ===")
+    LowLevelPredict(dataset).run()
