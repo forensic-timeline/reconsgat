@@ -1,0 +1,101 @@
+rules:
+  - id: 1
+    name: http_from_ip
+    description: "IP dari HTTP request: 'from: x.x.x.x'"
+    pattern: "from:\\s*([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)"
+    group: 1
+    strip_punctuation: false
+
+  - id: 11
+    name: sshd_password_result_ip
+    description: "sshd: 'Failed/Accepted password for [invalid user] X from x.x.x.x port N ssh2' — ambil IP. HARUS dicek sebelum rule ssh_user_from (id 2) karena pattern id 2 juga match baris ini tapi salah menangkap username, bukan IP."
+    pattern: "(?:Failed|Accepted) password for(?:\\s+invalid user)?\\s+\\S+\\s+from\\s+([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)"
+    group: 1
+    strip_punctuation: false
+
+  - id: 13
+    name: ssh_invalid_user_ip
+    description: "sshd: 'Invalid user X from x.x.x.x port N' — ambil IP (baris terpisah, muncul sebelum baris 'Failed password'). HARUS dicek sebelum rule ssh_user_from (id 2), alasan sama."
+    pattern: "Invalid user\\s+\\S+\\s+from\\s+([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)"
+    group: 1
+    strip_punctuation: false
+
+  - id: 12
+    name: sshd_max_auth_attempts_ip
+    description: "sshd: 'error: maximum authentication attempts exceeded for [invalid user] X from x.x.x.x port N ssh2 [preauth]' — ambil IP. HARUS dicek sebelum rule ssh_user_from (id 2), alasan sama seperti id 11."
+    pattern: "maximum authentication attempts exceeded for(?:\\s+invalid user)?\\s+\\S+\\s+from\\s+([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)"
+    group: 1
+    strip_punctuation: false
+
+  - id: 2
+    name: ssh_user_from
+    description: "SSH user: 'for user root from x.x.x.x'"
+    pattern: "for\\s+(?:user\\s+)?(\\S+)\\s+from"
+    group: 1
+    strip_punctuation: false
+
+  - id: 3
+    name: sudo_user
+    description: "sudo: '[sudo] username :'"
+    pattern: "\\[sudo\\]\\s+(\\S+)\\s+:"
+    group: 1
+    strip_punctuation: false
+
+  - id: 4
+    name: sshd_closed_ip
+    description: "sshd IP: 'Connection closed by / Received disconnect from x.x.x.x'"
+    pattern: "(?:Connection closed by|Received disconnect from)\\s+([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)"
+    group: 1
+    strip_punctuation: false
+
+  - id: 5
+    name: sshd_disconnected_ip
+    description: "sshd disconnect: 'Disconnected from [invalid] user X x.x.x.x' — ambil IP"
+    pattern: "Disconnected from\\s+(?:invalid\\s+)?user\\s+\\S+\\s+([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)"
+    group: 1
+    strip_punctuation: false
+
+  - id: 6
+    name: systemd_logind_user
+    description: "systemd-logind: 'New session N of user X'"
+    pattern: "New session\\s+\\S+\\s+of user\\s+([\\w-]+)"
+    group: 1
+    strip_punctuation: true
+
+  - id: 7
+    name: passwd_changed
+    description: "passwd: 'password changed for username'"
+    pattern: "password changed for\\s+(\\S+)"
+    group: 1
+    strip_punctuation: true
+
+  - id: 8
+    name: sshd_disconnecting_auth_ip
+    description: "sshd: 'Disconnecting authenticating user X x.x.x.x port ...: Too many authentication failures' — ambil IP"
+    pattern: "Disconnecting authenticating user\\s+\\S+\\s+([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)"
+    group: 1
+    strip_punctuation: false
+
+  - id: 9
+    name: pam_rhost_ip
+    description: "PAM auth failure: '... rhost=x.x.x.x ...' (mis. 'PAM N more authentication failures' / 'pam_unix(sshd:auth): authentication failure') — ambil IP"
+    pattern: "rhost=([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)"
+    group: 1
+    strip_punctuation: false
+
+  - id: 10
+    name: successful_login_ip
+    description: "sshd: 'Successful login of user: X from x.x.x.x:port using authentication method: ...' — ambil IP"
+    pattern: "from\\s+([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+):\\d+"
+    group: 1
+    strip_punctuation: false
+
+  - id: 14
+    name: pam_session_user
+    description: "PAM session (mis. cron/gdm-password): 'pam_unix(service:session): session opened/closed for user X[(uid=N)] [by (uid=M)]' — ambil username. Strip suffix '(uid=N)' dan ' by ...' kalau ada."
+    pattern: "session (?:opened|closed) for user\\s+([\\w.-]+?)(?:\\(uid=\\d+\\))?(?:\\s+by\\s.*)?$"
+    group: 1
+    strip_punctuation: false
+
+fallback:
+  default: "-"

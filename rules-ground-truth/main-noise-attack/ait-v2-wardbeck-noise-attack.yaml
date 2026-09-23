@@ -1,0 +1,8 @@
+# # User Login Activity in Server
+# - id: login_user
+#   ground_truth_label: login_user
+#   sensitivity: moderate
+#   filter:
+#     - Accepted publickey
+#     - blord
+#     - 172.21.240.147

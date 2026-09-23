@@ -1,0 +1,164 @@
+# ============================================================
+# web_graph_extract.yaml
+# Extraction template untuk Apache/Nginx web log
+# mencakup access.log dan error.log
+# Parser: text/apache_access
+# ============================================================
+
+log_type: web_log  # mencakup access.log dan error.log
+node_type: HTTPRequest
+
+# ── Deteksi file ─────────────────────────────────────────────
+detect:
+  filename_contains:
+    - access.log
+    - access_log
+    - error.log
+    - error_log
+  parser_equals:
+    - text/apache_access
+  line_not_contains:
+    - "Type: file"          # metadata plaso, bukan konten log
+    - "Owner identifier"    # metadata plaso
+
+# ── Regex pattern untuk extract field ────────────────────────
+patterns:
+  http_request:
+    description: "Format: http_request: METHOD /path HTTP/1.1 from: IP code: STATUS user_agent: UA"
+    regex: 'http_request:\s+(GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)\s+(\S+).*from:\s*([\d\.]+).*code:\s*(\d+).*user_agent:\s*(\S+)'
+    fields:
+      method:      {group: 1}
+      path:        {group: 2}
+      source_ip:   {group: 3}
+      status_code: {group: 4, type: int}
+      user_agent:  {group: 5}
+    defaults:
+      method:      "UNKNOWN"
+      path:        ""
+      source_ip:   ""
+      status_code: 0
+      user_agent:  ""
+
+  decoded_payload:
+    description: "Extract decoded payload jika ada [DECODED: ...]"
+    regex: '\[DECODED:\s*(.+)\]$'
+    fields:
+      decoded_payload: {group: 1}
+    defaults:
+      decoded_payload: null
+
+# ── Field tambahan (dari dataclass, bukan regex) ──────────────
+extra_fields:
+  - event_id
+  - label
+  - severity
+  - actor       # = source_ip
+  - message     # = raw line
+  - source_file
+  - timestamp
+
+# ── Cypher query templates ────────────────────────────────────
+cypher:
+  with_user:
+    description: "HTTPRequest dengan matched username (dari payload)"
+    query: |
+      MATCH (u:User {username: $username})
+      SET u.last_seen = $timestamp
+      MERGE (ip:IPAddress {ip: $source_ip})
+
+      // Strip query string untuk Page node, bawa semua params via WITH
+      WITH u, ip,
+           split($path, '?')[0] AS base_path,
+           $event_id AS event_id, $label AS label, $severity AS severity,
+           $actor AS actor, $method AS method, $path AS path,
+           $status_code AS status_code, $user_agent AS user_agent,
+           $decoded_payload AS decoded_payload, $message AS message,
+           $source_file AS source_file, $timestamp AS timestamp
+
+      MERGE (page:Page {path: base_path})
+
+      CREATE (req:HTTPRequest {
+          event_id: event_id,
+          label: label,
+          severity: severity,
+          actor: actor,
+          method: method,
+          path: path,
+          status_code: status_code,
+          user_agent: user_agent,
+          decoded_payload: decoded_payload,
+          message: message,
+          source_file: source_file,
+          timestamp: timestamp
+      })
+
+      CREATE (req)-[:RELATED_TO]->(u)
+      CREATE (ip)-[:REQUEST]->(req)
+      CREATE (req)-[:TARGET_PAGE]->(page)
+
+      RETURN u.username as user
+    params:
+      - event_id
+      - label
+      - severity
+      - actor
+      - username
+      - source_ip
+      - method
+      - path
+      - status_code
+      - user_agent
+      - decoded_payload
+      - message
+      - source_file
+      - timestamp
+
+  orphan:
+    description: "HTTPRequest tanpa matched username"
+    query: |
+      MERGE (ip:IPAddress {ip: $source_ip})
+
+      // Strip query string untuk Page node, bawa semua params via WITH
+      WITH ip,
+           split($path, '?')[0] AS base_path,
+           $event_id AS event_id, $label AS label, $severity AS severity,
+           $actor AS actor, $method AS method, $path AS path,
+           $status_code AS status_code, $user_agent AS user_agent,
+           $decoded_payload AS decoded_payload, $message AS message,
+           $source_file AS source_file, $timestamp AS timestamp
+
+      MERGE (page:Page {path: base_path})
+
+      CREATE (req:HTTPRequest {
+          event_id: event_id,
+          label: label,
+          severity: severity,
+          actor: actor,
+          method: method,
+          path: path,
+          status_code: status_code,
+          user_agent: user_agent,
+          decoded_payload: decoded_payload,
+          message: message,
+          source_file: source_file,
+          timestamp: timestamp
+      })
+
+      CREATE (ip)-[:REQUEST]->(req)
+      CREATE (req)-[:TARGET_PAGE]->(page)
+
+      RETURN req.timestamp as created
+    params:
+      - event_id
+      - label
+      - severity
+      - actor
+      - source_ip
+      - method
+      - path
+      - status_code
+      - user_agent
+      - decoded_payload
+      - message
+      - source_file
+      - timestamp
