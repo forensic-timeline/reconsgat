@@ -4,6 +4,7 @@ from process.normalization import Normalization
 from process.log_decoder import LogDecoder
 from process.low_level_predict import LowLevelPredict
 from process.log_to_graph import LogToGraph
+from process.attacker_identification import AttackerIdentification
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -19,17 +20,31 @@ if __name__ == "__main__":
     print("="*80)
 
     print("")
+    print("="*80)
     print("=== Step 1: Normalization ===")
+    print("="*80)
     Normalization(dataset).run()
 
     print("")
+    print("="*80)
     print("=== Step 2: Log Decoder ===")
+    print("="*80)
     LogDecoder(dataset).run()
 
     print("")
+    print("="*80)
     print("=== Step 3: Low Level Semantic Labeling ===")
+    print("="*80)
     LowLevelPredict(dataset).run()
 
     print("")
+    print("="*80)
     print("=== Step 4: Log to Graph ===")
+    print("="*80)
     LogToGraph(dataset).run()
+
+    print("")
+    print("="*80)
+    print("=== Step 5: Attacker Identification ===")
+    print("="*80)
+    AttackerIdentification(dataset).run()

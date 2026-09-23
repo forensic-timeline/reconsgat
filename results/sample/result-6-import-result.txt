@@ -1,6 +1,4 @@
-============================================================
-FINAL SUMMARY
-============================================================
+=== FINAL SUMMARY ===
 Total lines processed : 51
 Total inserted        : 51
   - syslog + auth log : 19

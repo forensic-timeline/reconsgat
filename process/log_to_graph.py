@@ -1,8 +1,8 @@
 """
 process/log_to_graph.py
 
-Konversi dari 6_log_to_graph.ipynb. Semua logika dipertahankan
-PERSIS SAMA seperti versi notebook.
+To map CSV log data to a graph database (Neo4j) 
+using extraction templates (YAML).
 """
 
 import csv
@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-# Tambah path rules-graph agar graph_extractor.py bisa diimport
+# Add path rules-graph so graph_extractor.py can be imported
 sys.path.insert(0, "rules-graph")
 
 from graph_extractor import GraphExtractor
@@ -56,15 +56,12 @@ def parse_timestamp(ts_str: str) -> datetime:
     Format: 2022-01-18T12:38:01+00:01
     """
     try:
-        # Handle format dengan timezone offset seperti +00:01
-        # Python's fromisoformat() bisa handle ini di Python 3.11+
-        # Untuk kompatibilitas, kita coba beberapa pendekatan
-
-        # Coba langsung parse
+        # Handle format with timezone offset like +00:01
+        # Try parsing directly
         return datetime.fromisoformat(ts_str)
     except ValueError:
         try:
-            # Fallback: parse tanpa timezone
+            # Fallback: parse without timezone
             ts_clean = ts_str.split('+')[0].split('-')[0:3]
             ts_clean = '-'.join(ts_clean[:3]) + ts_str[10:19]  # Ambil date + time
             return datetime.fromisoformat(ts_str[:19])
@@ -87,28 +84,27 @@ class LogToGraph:
         self.NEO4J_PASSWORD = "adminkami"
         self.NEO4J_DATABASE = dataset
 
-        # ── Toggle: apakah baris berlabel 'benign' ikut di-import ke graph? ──
-        # False (default) = hanya non-benign (cepat, graph lebih kecil)
-        # True             = semua baris ikut di-import (graph lebih besar/lengkap,
-        #                     tapi proses ingest jauh lebih lama & lebih berat)
+        # ── Toggle: is all 'benign' also imported into the graph? ──
+        # False (default) = non-benign only (fast, smaller graph)
+        # True            = All rows are imported (larger graph)
         self.INCLUDE_BENIGN = True
 
         # CSV Column indices
         self.COL_EVENT_ID = 0
         self.COL_TIMESTAMP = 1   # timestamp column
         self.COL_DESC = 11       # desc column (log content)
-        self.COL_FILENAME = 7   # filename column (untuk detect log type)
+        self.COL_FILENAME = 7   # filename column (to detect log type)
         self.COL_LABEL = 13      # label_predict column
         self.COL_SOURCE_FILE = 7  # display_name column
 
         self.TEMPLATES_DIR = "rules-graph"
 
     def run(self):
-        # ── Extraction Templates (YAML) — tampilkan template yang tersedia ──────
+        # ── Extraction Templates (YAML) — show the template ─
         for f in sorted(Path(self.TEMPLATES_DIR).glob("*.yaml")):
             print(f"  {f.name}")
 
-        # ── Initialize GraphExtractor — membaca semua YAML dari rules-graph/ ────
+        # ── Initialize GraphExtractor — read all YAML from rules-graph/ ────
         extractor = GraphExtractor(
             templates_dir=self.TEMPLATES_DIR,
             neo4j_uri=self.NEO4J_URI,
@@ -118,7 +114,7 @@ class LogToGraph:
             include_benign=self.INCLUDE_BENIGN,
         )
 
-        # ── Buat constraint supaya semua MERGE (Page, User, IPAddress) cepat
+        # ── make constraint so all MERGE (Page, User, IPAddress) are fast
         ENSURE_CONSTRAINTS = [
             ("page_path_unique",  "CREATE CONSTRAINT page_path_unique IF NOT EXISTS FOR (p:Page) REQUIRE p.path IS UNIQUE"),
             ("user_username_unique", "CREATE CONSTRAINT user_username_unique IF NOT EXISTS FOR (u:User) REQUIRE u.username IS UNIQUE"),
@@ -130,19 +126,17 @@ class LogToGraph:
                 _s.run(stmt)
                 print(f"Constraint {name} created (or already exists)")
 
-        # Hitung total baris
+        # count total lines
         total_lines = sum(1 for _ in open(self.CSV_INPUT, encoding='utf-8', errors='replace')) - 1
         print(f"Total lines in {self.CSV_INPUT}: {total_lines}")
 
         # ── CSV Column to Graph Mapping Process ──────────────────────────────
-        # Load username cache dari Neo4j (untuk matching di Pass 2)
+        # Load username cache from Neo4j (for matching in Pass 2)
         extractor.load_username_cache()
         print(f"Ready to process {total_lines} rows")
 
         # ========== Phase 1: syslog dan auth.log ==========
-        print("=" * 60)
-        print("Phase 1: Processing syslog and auth.log")
-        print("=" * 60)
+        print("=== Phase 1: Processing syslog and auth.log ===")
 
         processed = 0
         inserted  = 0
@@ -157,7 +151,7 @@ class LogToGraph:
                 if first_row:
                     first_row = False
                     continue
-                if len(row) < 14:  # sesuai jumlah kolom terbaru (dgn kolom actor)
+                if len(row) < 14:  # according to the actor column
                     continue
 
                 filename = row[7]
@@ -177,7 +171,7 @@ class LogToGraph:
                 except Exception as e:
                     errors += 1
                     print(f"  ERROR event_id={row[0]}: {e}")
-                    print(f"    line: {row[11][:80]}")  # kolom "decoded" (bergeser dari 10 -> 11)
+                    print(f"    line: {row[11][:80]}")  # column "decoded"
 
                 if processed % 500 == 0:
                     print(f"  Phase 1: {processed} processed, {inserted} inserted, "
@@ -186,13 +180,11 @@ class LogToGraph:
         print(f"\nPhase 1 done: {processed} processed, {inserted} inserted, "
               f"{skipped} skipped (access.log), {errors} errors")
 
-        # Reload cache setelah Pass 1
+        # Reload cache after Pass 1
         extractor.load_username_cache()
 
         # ========== Phase 2: access.log ==========
-        print("=" * 60)
-        print("Phase 2: Processing access.log - error.log")
-        print("=" * 60)
+        print("=== Phase 2: Processing access.log - error.log ===")
 
         processed2 = 0
         inserted2  = 0
@@ -206,13 +198,13 @@ class LogToGraph:
                 if first_row:
                     first_row = False
                     continue
-                if len(row) < 14:  # sesuai jumlah kolom terbaru (dgn kolom actor)
+                if len(row) < 14:  # according to the actor column
                     continue
 
                 filename = row[7]
                 parser   = row[6]
 
-                # Pass 2: hanya access.log
+                # Pass 2: only access.log and error.log
                 is_access = any(x in filename.lower() for x in ['access.log', 'access_log', 'error.log', 'errro_log'])
                 is_access = is_access or parser == 'text/apache_access'
                 if not is_access:
@@ -225,7 +217,7 @@ class LogToGraph:
                 except Exception as e:
                     errors2 += 1
                     print(f"  ERROR event_id={row[0]}: {e}")
-                    print(f"    line: {row[11][:80]}")  # kolom "decoded" (bergeser dari 10 -> 11)
+                    print(f"    line: {row[11][:80]}")  # column "decoded"
 
                 if processed2 % 500 == 0:
                     print(f"  Phase 2: {processed2} processed, {inserted2} inserted, "
@@ -239,9 +231,7 @@ class LogToGraph:
 
         # ========== SUMMARY ==========
         summary_lines = [
-            "=" * 60,
-            "FINAL SUMMARY",
-            "=" * 60,
+            "=== FINAL SUMMARY ===",
             f"Total lines processed : {total_lines}",
             f"Total inserted        : {inserted + inserted2}",
             f"  - syslog + auth log : {inserted}",
@@ -260,4 +250,4 @@ class LogToGraph:
         with open(self.IMPORT_OUTPUT, "w", encoding="utf-8") as f:
             f.write(summary_text + "\n")
 
-        print(f"\nSummary disimpan ke: {self.IMPORT_OUTPUT}")
+        print(f"\nSummary saved to: {self.IMPORT_OUTPUT}")
