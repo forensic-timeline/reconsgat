@@ -9,6 +9,7 @@ from process.attacker_tracking import AttackerTracking
 from process.graph_semantic import GraphSemantic
 from process.graph_high_level import GraphHighLevel
 from process.mitre_attck import MitreAttck
+from process.mitre_technique import MitreTechnique
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -76,3 +77,9 @@ if __name__ == "__main__":
     print("=== Step 6.3: MITRE ATT&CK Mapping ===")
     print("="*80)
     MitreAttck(dataset).run()
+
+    print("")
+    print("="*80)
+    print("=== Step 6.4: MITRE ATT&CK Technique ===")
+    print("="*80)
+    MitreTechnique(dataset).run()
