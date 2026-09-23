@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d5" for="edge" attr.name="relationship" attr.type="string" />
+  <key id="d4" for="node" attr.name="technique_code" attr.type="string" />
+  <key id="d3" for="node" attr.name="timestamp" attr.type="string" />
+  <key id="d2" for="node" attr.name="technique_tactic" attr.type="string" />
+  <key id="d1" for="node" attr.name="label" attr.type="string" />
+  <key id="d0" for="node" attr.name="node_type" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:103">
+      <data key="d0">AttackTactic</data>
+      <data key="d1">Command And Control</data>
+      <data key="d2">attack.command-and-control</data>
+      <data key="d3">2022-01-18T12:37:49.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:104">
+      <data key="d0">AttackTactic</data>
+      <data key="d1">Reconnaissance</data>
+      <data key="d2">attack.reconnaissance</data>
+      <data key="d3">2022-01-18T12:38:00.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:105">
+      <data key="d0">AttackTactic</data>
+      <data key="d1">Execution</data>
+      <data key="d2">attack.execution</data>
+      <data key="d3">2022-01-18T12:38:04.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:106">
+      <data key="d0">AttackTactic</data>
+      <data key="d1">Credential Access</data>
+      <data key="d2">attack.credential-access</data>
+      <data key="d3">2022-01-18T12:38:16.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:107">
+      <data key="d0">AttackTactic</data>
+      <data key="d1">Privilege Escalation</data>
+      <data key="d2">attack.privilege-escalation</data>
+      <data key="d3">2022-01-18T13:14:41.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:108">
+      <data key="d0">AttackTactic</data>
+      <data key="d1">Initial Access</data>
+      <data key="d2">attack.initial-access</data>
+      <data key="d3">2025-04-29T05:35:51.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:96">
+      <data key="d0">AttackTechnique</data>
+      <data key="d4">attack.t1071.001</data>
+      <data key="d1">T1071.001</data>
+      <data key="d2">attack.command-and-control</data>
+      <data key="d3">2022-01-18T12:37:49.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:97">
+      <data key="d0">AttackTechnique</data>
+      <data key="d4">attack.t1595</data>
+      <data key="d1">T1595</data>
+      <data key="d2">attack.reconnaissance</data>
+      <data key="d3">2022-01-18T12:38:00.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:98">
+      <data key="d0">AttackTechnique</data>
+      <data key="d4">attack.t1059</data>
+      <data key="d1">T1059</data>
+      <data key="d2">attack.execution</data>
+      <data key="d3">2022-01-18T12:38:04.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:99">
+      <data key="d0">AttackTechnique</data>
+      <data key="d4">attack.t1003.008</data>
+      <data key="d1">T1003.008</data>
+      <data key="d2">attack.credential-access</data>
+      <data key="d3">2022-01-18T12:38:16.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:100">
+      <data key="d0">AttackTechnique</data>
+      <data key="d4">attack.t1548.003</data>
+      <data key="d1">T1548.003</data>
+      <data key="d2">attack.privilege-escalation</data>
+      <data key="d3">2022-01-18T13:14:41.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:101">
+      <data key="d0">AttackTechnique</data>
+      <data key="d4">attack.t1078</data>
+      <data key="d1">T1078</data>
+      <data key="d2">attack.initial-access</data>
+      <data key="d3">2025-04-29T05:35:51.000000+00:00</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:102">
+      <data key="d0">AttackTechnique</data>
+      <data key="d4">attack.t1110</data>
+      <data key="d1">T1110</data>
+      <data key="d2">attack.credential-access</data>
+      <data key="d3">2025-04-29T06:05:31.000000+00:00</data>
+    </node>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:103" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:104">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:104" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:105">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:105" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:106">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:106" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:107">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:107" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:108">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:96" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:103">
+      <data key="d5">TACTIC</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:96" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:97">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:97" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:104">
+      <data key="d5">TACTIC</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:97" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:98">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:98" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:105">
+      <data key="d5">TACTIC</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:98" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:99">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:99" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:106">
+      <data key="d5">TACTIC</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:99" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:100">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:100" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:107">
+      <data key="d5">TACTIC</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:100" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:101">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:101" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:108">
+      <data key="d5">TACTIC</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:101" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:102">
+      <data key="d5">FOLLOWED_BY</data>
+    </edge>
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:102" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:106">
+      <data key="d5">TACTIC</data>
+    </edge>
+  </graph>
+</graphml>

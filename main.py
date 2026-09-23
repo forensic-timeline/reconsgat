@@ -11,6 +11,7 @@ from process.graph_high_level import GraphHighLevel
 from process.mitre_attck import MitreAttck
 from process.mitre_technique import MitreTechnique
 from process.mitre_tactic import MitreTactic
+from process.mitre_export import MitreExport
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -90,3 +91,9 @@ if __name__ == "__main__":
     print("=== Step 6.5: MITRE ATT&CK Tactic ===")
     print("="*80)
     MitreTactic(dataset).run()
+
+    print("")
+    print("="*80)
+    print("=== Step 6.6: MITRE ATT&CK Export ===")
+    print("="*80)
+    MitreExport(dataset).run()
