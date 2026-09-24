@@ -1,10 +1,6 @@
 user,relation_to_anomaly,path_ip_to_user,relations_ip_to_user,path_user_to_ip,relations_user_to_ip,status
 172.17.130.196,yes,Yes,172.17.130.196 -> REQUEST (HTTPRequest) -> RELATED_TO (user: phopkins),No,-,attacker
-243.23.54.175,yes,Yes,243.23.54.175 -> REQUEST (AuthEvent) -> TARGET_USER (user: root),No,-,attacker
-71.238.128.110,yes,Yes,71.238.128.110 -> REQUEST (AuthEvent) -> TARGET_USER (user: root),No,-,attacker
 phopkins,yes,No,-,Yes,phopkins <- RELATED_TO (HTTPRequest) <- REQUEST (IPAddress: 172.17.130.196),attacker
-root,yes,No,-,Yes,root <- TARGET_USER (AuthEvent) <- REQUEST (IPAddress: 243.23.54.175),attacker
+root,yes,No,-,Yes,root <- ESCALATED_TO (AuthEvent) <- PERFORMED (user: phopkins) <- RELATED_TO (HTTPRequest) <- REQUEST (IPAddress: 172.17.130.196),attacker
 10.35.35.118,yes,No,-,No,-,attacker
 192.168.115.21,yes,No,-,No,-,attacker
-jwilkinson,yes,No,-,No,-,attacker
-webadmin_cyberpanel,yes,No,-,No,-,attacker

@@ -220,36 +220,6 @@
       <data key="d6">Sudo Read Command Executed from Web Directory</data>
       <data key="d7">2022-01-18T13:14:49.000000+00:00</data>
     </node>
-    <node id="HLE-22">
-      <data key="d0">HighLevelEvent</data>
-      <data key="d1">medium</data>
-      <data key="d2">HLE-22</data>
-      <data key="d3">243.23.54.175,root</data>
-      <data key="d4">3</data>
-      <data key="d5">37,38,38</data>
-      <data key="d6">User Login Activity in Server</data>
-      <data key="d7">2025-04-29T05:35:51.000000+00:00</data>
-    </node>
-    <node id="HLE-23">
-      <data key="d0">HighLevelEvent</data>
-      <data key="d1">high</data>
-      <data key="d2">HLE-23</data>
-      <data key="d3">243.23.54.175</data>
-      <data key="d4">1</data>
-      <data key="d5">42</data>
-      <data key="d6">Login Cyberpanel Attempts</data>
-      <data key="d7">2025-04-29T05:47:14.000000+00:00</data>
-    </node>
-    <node id="HLE-24">
-      <data key="d0">HighLevelEvent</data>
-      <data key="d1">medium</data>
-      <data key="d2">HLE-24</data>
-      <data key="d3">71.238.128.110</data>
-      <data key="d4">1</data>
-      <data key="d5">43</data>
-      <data key="d6">SSH Failed Login Attempt</data>
-      <data key="d7">2025-04-29T06:05:31.000000+00:00</data>
-    </node>
     <edge source="HLE-1" target="HLE-2">
       <data key="d8">FOLLOWED_BY</data>
     </edge>
@@ -308,15 +278,6 @@
       <data key="d8">FOLLOWED_BY</data>
     </edge>
     <edge source="HLE-20" target="HLE-21">
-      <data key="d8">FOLLOWED_BY</data>
-    </edge>
-    <edge source="HLE-21" target="HLE-22">
-      <data key="d8">FOLLOWED_BY</data>
-    </edge>
-    <edge source="HLE-22" target="HLE-23">
-      <data key="d8">FOLLOWED_BY</data>
-    </edge>
-    <edge source="HLE-23" target="HLE-24">
       <data key="d8">FOLLOWED_BY</data>
     </edge>
   </graph>

