@@ -1,6 +1,0 @@
-user,relation_to_anomaly,path_ip_to_user,relations_ip_to_user,path_user_to_ip,relations_user_to_ip,status
-172.17.130.196,yes,Yes,172.17.130.196 -> REQUEST (HTTPRequest) -> RELATED_TO (user: phopkins),No,-,attacker
-phopkins,yes,No,-,Yes,phopkins <- RELATED_TO (HTTPRequest) <- REQUEST (IPAddress: 172.17.130.196),attacker
-root,yes,No,-,Yes,root <- ESCALATED_TO (AuthEvent) <- PERFORMED (user: phopkins) <- RELATED_TO (HTTPRequest) <- REQUEST (IPAddress: 172.17.130.196),attacker
-10.35.35.118,yes,No,-,No,-,attacker
-192.168.115.21,yes,No,-,No,-,attacker

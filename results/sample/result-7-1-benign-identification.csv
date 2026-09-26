@@ -1,3 +1,0 @@
-user,relation_to_anomaly,path_ip_to_user,relations_ip_to_user,path_user_to_ip,relations_user_to_ip,status
-10.35.32.164,no,-,-,-,-,benign
-10.35.33.116,no,-,-,-,-,benign
