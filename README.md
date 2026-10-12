@@ -18,11 +18,11 @@ The result is a four-layer reconstruction (low-level events, high-level events (
 
 SGAT is implemented in Python, so a working Python environment is required. Please follow the [official documentation](https://www.python.org/downloads/) to download and install Python (version 3.X or later).
 
-SGAT uses a graph database to store the reconstructed graph, perform attacker identification and tracking, and visualize the results. SGAT is built on [Neo4j](https://neo4j.com/), please follow the [installation guide](https://neo4j.com/docs/operations-manual/current/installation/) to set it up. Once installed, Neo4j can be accessed locally, and a database must be created beforehand following this [documentation](https://neo4j.com/docs/operations-manual/current/manage-databases/).
+SGAT uses a graph database to store the reconstructed graph, perform attacker identification and tracking, and visualize the results. SGAT is built on [Neo4j](https://neo4j.com/), please follow the [installation guide](https://neo4j.com/docs/desktop/current/installation/) to set it up. Once installed, Neo4j can be accessed locally, and a database must be created beforehand following this [documentation](https://neo4j.com/docs/desktop/current/operations/database-management/).
 
 Anomaly detection relies on [Sigma rules](https://github.com/SigmaHQ/sigma) and a set of web-forensic detection rules. The required rule sets are included in this repository (or can be downloaded from their respective sources).
 
-The forensic timeline is generated using [Plaso (log2timeline)](https://github.com/log2timeline/plaso), which aggregates the raw logs into a single chronological timeline. Please follow the [installation documentation](https://plaso.readthedocs.io/en/latest/sources/user/Installing.html) to install it.
+The forensic timeline is generated using [Plaso (log2timeline)](https://github.com/log2timeline/plaso), which aggregates the raw logs into a single chronological timeline. Please follow the [installation documentation](https://plaso.readthedocs.io/en/latest/index.html) to install it.
 
 Finally, the Python dependencies can be installed via:
 
